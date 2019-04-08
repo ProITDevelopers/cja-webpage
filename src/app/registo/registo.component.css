@@ -1,3 +1,26 @@
 .btn-default{
 	background-color: #e98f28;
 }
+.background-image{
+	/* The image used */
+    /* Full height */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+   /* padding-top: 15%;
+     z-index: -1;
+    opacity: 0.6;*/
+}
+#form{
+
+	background-color: white;border: 1px solid rgba(0,0,0,.125);
+    border-radius: 2.25rem;
+}
+.form-text{
+    color: red;
+}

@@ -1,0 +1,25 @@
+#footer1 a{
+	color: white;
+	text-decoration:none;
+}
+#footer1 .title-small{
+	color: white;
+	background-color: gray;
+}
+#footer1 a,h6{
+	font-size: 12px;
+}
+.btn-default{
+	color: #fff;
+	background-color: #dc0461;
+	border-color: #dc0461;
+}
+#footer1 p{
+	color: white;
+}
+#footer1 p span>i{
+	color: #dc0461;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	font-size: 24px;
+}

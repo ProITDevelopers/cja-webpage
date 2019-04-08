@@ -15,11 +15,25 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistoComponent } from './registo/registo.component';
+import { HomeComponent } from './home/home.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { NoticiasComponent } from './noticias/noticias.component';
+import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
+import { RegulamentoComponent } from './regulamento/regulamento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistoComponent
+    RegistoComponent,
+    HomeComponent,
+    ContactosComponent,
+    HeaderComponent,
+    FooterComponent,
+    NoticiasComponent,
+    PerguntasFrequentesComponent,
+    RegulamentoComponent
   ],
   imports: [
     BrowserModule,

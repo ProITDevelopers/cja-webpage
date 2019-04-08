@@ -1,0 +1,18 @@
+.navbar,.navbar-light{
+	background-color:#dc0461
+}
+.navbar-brand img{
+	/*position: absolute;
+    background-color: #d80957;
+    margin: -33px 5px 10px 80px;*/
+    height: 55px;
+}
+
+@media (max-width: 576px){ 	
+	.navbar-brand img {
+		height: 50px;
+	}
+}
+i{
+	color: white;
+}

@@ -1,0 +1,13 @@
+#perguntas{
+	/*margin-bottom: 300px; */
+    padding-top: 50px;
+    /* position: relative; */
+    /* margin-bottom: auto; */
+    min-height: 60vh;
+}
+h3{
+	color: #dc0461;
+}
+.btn-link,.btn-link:hover{
+	color: #dc0461;
+}
