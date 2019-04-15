@@ -46,7 +46,16 @@ i{
 	background-color: #dc0461;
 	border-color: #dc0461;
 }
-/*
+#carouselExampleSlidesOnly1 .carousel-indicators li{
+	background-color: #dc0461;
+	height: 20px;
+    width: 20px;
+    border-radius: 50%;/*circle*/
+}
+/*#carouselExampleSlidesOnly1 img{
+	height: 350px;
+}
+
 */
 /*#carouselExampleSlidesOnly {margin-left: 30px; margin-right: 30px;}
 
