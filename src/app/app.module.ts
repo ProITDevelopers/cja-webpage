@@ -4,8 +4,11 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DatePipe} from '@angular/common';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+//import { PaginationModule } from 'ngx-bootstrap/pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 defineLocale('pt-br', ptBrLocale); 
@@ -45,6 +48,8 @@ import { RegulamentoComponent } from './regulamento/regulamento.component';
     AppRoutingModule,
     DataTablesModule,
     BsDatepickerModule.forRoot(),
+    NgxPaginationModule,
+    OwlModule,
     ToastrModule.forRoot({
     timeOut: 20000,
     positionClass: 'toast-top-right',
