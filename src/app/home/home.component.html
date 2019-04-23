@@ -1,30 +1,4 @@
-<nav class="navbar navbar-expand-lg  navbar-light"  >
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <!--<a class="navbar-brand" href="#" #b48d00>Media Rumos</a>width="150" -->
-  <a class="navbar-brand" [routerLink]="['/']"><img src="assets/cja3-100x62.png" alt="logo" class="d-inline-block align-top"></a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-       <li class="nav-item mr-5">
-        <a class="nav-link" href="#"><i class="fa fa-thumbs-o-up fa-2x"></i></a>
-      </li> 
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="#"><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item mr-5">
-        <a class="nav-link" href="#"><i class="fa fa-phone fa-2x" aria-hidden="true"></i></a>
-      </li> 
-      <!-- <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/']">Aderir ao cartão</a>
-      </li> -->
-    </ul>
-  </div><!--background-color: #f9d608;-->
-</nav>
-<!--<div>
-   <img src="assets/FREE3.jpg" alt="jovens" class="img-fluid w-100 h-100">
-</div>-->
+<app-header></app-header>
 <div id="carouselExampleSlidesOnly1" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleSlidesOnly1" data-slide-to="0" class="active"></li>
@@ -59,7 +33,7 @@
               <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
               <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
             </ol> -->
-            <div class="carousel-inner ">
+            <!--<div class="carousel-inner ">
               <div class="carousel-item active">
                 <div class="row justify-content-center">
                   <div class="col">
@@ -96,7 +70,7 @@
                   </div>
                 </div>
               </div> 
-            </div>
+            </div>-->
              <!-- <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -109,15 +83,15 @@
         <!--</div>--> 
       </div>
     </div>
-     <owl-carousel
+    <owl-carousel
      [options]="carouselOptions"
      [items]="images" 
      [carouselClasses]="['owl-theme', 'row', 'sliding']" #owlElement>
      <div class="item" *ngFor="let image of images;let i = index ">
-         <div class="thumbnail-image">
-          <img [src]="image"/></div>
+         
+          <img [src]="image" class="slide-image" />
      </div>
- </owl-carousel>
+    </owl-carousel>
 	</div><!-- //.container -->
 </section>
 <section id="video" class="mt-5">

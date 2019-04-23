@@ -20,8 +20,8 @@ export class RegistoComponent implements OnInit {
   	private toastr: ToastrService,private localeService: BsLocaleService) { 
   	this.minDate = new Date();
     this.maxDate = new Date();
-    this.minDate.setDate(this.minDate.getDate() - 43800);//Idade minima 18
-    this.maxDate.setDate(this.maxDate.getDate() - 6570);
+    this.minDate.setDate(this.minDate.getDate() - 12775);//Idade maxima 35
+    this.maxDate.setDate(this.maxDate.getDate() - 5475);//Idade minima 15
     this.localeService.use('pt-br');
   }
   @ViewChild('imageInput') myInputVariable: ElementRef;
@@ -72,16 +72,16 @@ export class RegistoComponent implements OnInit {
       console.log(data.data);
       console.log(data.QRCode);
       this.dados1=data.data;/**/
-
+      this.dados='';
       this.mensagem='Registo feito com sucesso!';
       //this.showSuccess(this.dados._id);
       setTimeout(() =>this.clean(form),9000);    
     },
     error => {
         this.changeTextButton(false,"Registrar");
-       	this.dados=error.error;
+       	this.dados=error.error.error;
        	this.mensagem='';
-       	console.log(this.dados)
+       	//console.log(this.dados.error)
     });
   }
   processFile(imageInput: any) {

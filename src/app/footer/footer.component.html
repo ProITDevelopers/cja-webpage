@@ -16,6 +16,9 @@
                               <li class="nav-item">
                                 <a class="nav-link text-uppercase" [routerLink]="['/regulamento']">Regulamento</a>
                               </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-uppercase" [routerLink]="['/sobre-nos']">Sobre nós</a>
+                              </li>
                               <!-- <li class="nav-item">
                                 <a class="nav-link text-uppercase" [routerLink]="['/contactos']">Contactos</a>
                               </li> -->
@@ -42,19 +45,18 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <form>
+                    <form (ngSubmit)="enviarMensagem(mensagemF)" #mensagemF="ngForm" novalidate >
                         <div class="form-group">
-                            <input type="email" class="form-control" id="nome" placeholder="Nome">
+                            <input type="email" class="form-control" id="nome" name="nome1" placeholder="Nome" [(ngModel)]="mensagem.nome" #nomeI="ngModel" autocomplete="off" required>
                           </div>
                           <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                            <input type="email" class="form-control" id="email" name="email1" placeholder="email@example.com" [(ngModel)]="mensagem.email" #emailI="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" autocomplete="off" required>
                         </div>
-                      
                         <div class="form-group">
-                            <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                            <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem" name="mensagem1" [(ngModel)]="mensagem.mensagem" #mensagemI="ngModel" autocomplete="off" required></textarea>
                         </div>
                         <div class="ml-auto">
-                            <button type="submit" class="btn btn-default">Enviar</button>
+                            <button type="submit" id="enviar" class="btn btn-default" [disabled]="!mensagemF.form.valid">Enviar</button>
                         </div>
                     </form>
                 </div>

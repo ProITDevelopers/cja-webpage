@@ -12,6 +12,16 @@ h3{
 	color: #dc0461;
 }
 .card{
-	height: 320px;
+	/*height: 350px;*/
 	/*border-color: #dc0461;*/
+}
+@media (max-width: 576px){
+
+}
+/*.card img{
+	height: 150px;
+}*/
+.row > div[class*='col-'] {
+  display: flex;
+  flex:1 0 auto;
 }

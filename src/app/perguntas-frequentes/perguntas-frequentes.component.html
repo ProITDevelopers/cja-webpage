@@ -5,7 +5,23 @@
 			<h3 class="font-alt font-w-700 letter-spacing-2 m-4 text-uppercase title-small">Perguntas frequentes</h3>
 		</div>
 		
-		<div class="accordion" id="accordionExample">
+		<div class="accordion" id="accordionExample1" >
+			<div class="card " *ngFor=" let pergunta of perguntas; let i= index ">
+			    <div class="card-header" [id]="'pergunta'+i">
+			      <h2 class="mb-0">
+			        <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
+			          {{pergunta.pergunta}}
+			        </button>
+			      </h2>
+			    </div>
+			    <div [id]="'collapseOne'+i" [ngClass]=" i == 0 ? ' collapse show' : 'collapse'" [attr.aria-labelledby]="'pergunta'+i" data-parent="#accordionExample1">
+			      <div class="card-body">
+			        {{pergunta.resposta}}
+			      </div>
+			    </div>
+			</div>
+		</div>
+		<!-- <div class="accordion" id="accordionExample">
 			<div class="card ">
 			    <div class="card-header" id="headingOne">
 			      <h2 class="mb-0">
@@ -48,29 +64,7 @@
 			      </div>
 			    </div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </section>
 <app-footer></app-footer>
-<!--secção about
-<section id="about">
-	<div class="container">
-		<div class="row justify-content-center mb-5">
-            <div class="col-lg-8 offset-2 text-center mb-3 mb-lg-5">
-                <h3 class="font-alt font-w-700 letter-spacing-2 m-0 text-uppercase title-small">Sobre o Cartão Jovem</h3>
-                <span class="bg-blue d-block mt-4 mx-auto sep-line-medium-thick-long"></span>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-10 offset-lg-1 col-xl-8 text-justify text-lg-left">
-                
-                <p class="text-medium text-justify">Cartão Jovem é uma iniciativa de âmbito nacional que visa proporcionar vantagens aos jovens em várias atividades do dia-a-dia. Com o intuito de promover medidas que estimulem jovens de todo o país, e assim contribuírem para desenvolver e promoção de iniciativas locais e nacionais, bem como permitir o acesso privilegiado a bens e serviços de valor acrescentado, estes de mais difícil acesso a quem não tem o CJA (Cartão Jovem Angola). </p>
-                <p class="text-medium text-justify">Igualmente permite aos seus parceiros tais como Instituições Públicas, Associações, Empresas Privadas e Organismos de Apoio Social o acesso a uma ferramenta de marketing rápida e eficaz com retorno garantido, privilegiada e assente numa vasta base de dados de novos consumidores, que são o futuro do país.</p>
-                <p class="text-medium text-justify">
-                <a [routerLink]="['/']" class="page-scroll btn btn-outline-black btn-small border-thick mt-2 mx-0">Aderir ao cartão</a>
-            </div>
-        </div>            
-	</div>
-</section>
-
--->

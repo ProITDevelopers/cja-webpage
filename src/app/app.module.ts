@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { RegulamentoComponent } from './regulamento/regulamento.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RegulamentoComponent } from './regulamento/regulamento.component';
     FooterComponent,
     NoticiasComponent,
     PerguntasFrequentesComponent,
-    RegulamentoComponent
+    RegulamentoComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,

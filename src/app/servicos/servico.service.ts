@@ -10,7 +10,6 @@ export class ServicoService {
 
   constructor(private http:HttpClient) { }
    url="https://mediarumo.herokuapp.com/cja";
-   //url1="https://mediarumos.herokuapp.com/subscricao";teste
 
    headers = new HttpHeaders();
    

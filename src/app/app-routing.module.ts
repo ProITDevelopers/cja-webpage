@@ -7,6 +7,7 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { RegulamentoComponent } from './regulamento/regulamento.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 const routes: Routes = [
 	{
@@ -25,9 +26,15 @@ const routes: Routes = [
 	{
     path: 'registo-cartao',
     component: RegistoComponent,
-    //canActivate:[GuardGuard,AdminGuard],
     data: {
       title: 'Registo de Cartão jovem'
+    }
+  },
+  {
+    path: 'sobre-nos',
+    component: SobreNosComponent,
+    data: {
+      title: 'Sobre nós'
     }
   }/*,
   {
