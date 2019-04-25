@@ -27,6 +27,10 @@ i{
 	border-top: 7px solid #fec600;
 	border-bottom: 7px solid #fec600;
 }
+
+/*#video video{
+	width: 100%;
+}*/
 .embed-responsive{
 	height: 400px;
 }

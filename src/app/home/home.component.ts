@@ -17,14 +17,16 @@ export class HomeComponent implements OnInit {
     
     'assets/logos/Logo_xyami.png',
     'assets/logos/LOGO_BNI_WIRED.png',
-    'assets/logos/movicel.png',
+    //'assets/logos/movicel.png',
     'assets/logos/CEOA_LOGO_MASTER.png',
     'assets/logos/Logo_mecofarma_aobaixo.png',
     'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
     'assets/logos/SAPO_FV_Pol_P_RGB.png',
     'assets/logos/Logotipo ENSA.png',
-    'assets/logos/Logo_Cinemax_black-02.png',
-    'assets/logos/kero.png'
+    'assets/logos/zahara.png',
+    'assets/logos/kero1.png',
+    'assets/logos/Logo_Cinemax_black-02.png'
+    
   ];
   carouselOptions = {
     margin: 25,
