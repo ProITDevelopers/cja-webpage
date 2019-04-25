@@ -23,7 +23,7 @@ export class FooterComponent implements OnInit {
 	this.changeTextButton(true,"Enviando...");
   	this.emailService.enviar(this.mensagem).subscribe(data=> {
 
-      console.log(data);
+      //console.log(data);
       this.dados1=data.mensagem;/**/
       this.dados='';
       this.msg='Mensagem enviada com sucesso!';

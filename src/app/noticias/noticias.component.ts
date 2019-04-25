@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 
 @Component({
   selector: 'app-noticias',
@@ -111,9 +110,5 @@ export class NoticiasComponent implements OnInit {
   ngOnInit() {
   	this.p=1;
   }
-  /*pageChanged(event: PageChangedEvent): void {
-    const startItem = (event.page - 1) * event.itemsPerPage;
-    const endItem = event.page * event.itemsPerPage;
-    this.noticias = this.noticias.slice(startItem, endItem);
-  }*/
+  
 }

@@ -13,16 +13,25 @@ export class PerguntasFrequentesComponent implements OnInit {
   }
   perguntas=[
   	{
-  		pergunta:' O que é o cartão jovem?',
-  		resposta:'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven'+'t'+' heard of them accusamus labore sustainable VHS.'
+  		pergunta:'O que é o Cartão Jovem Angola?',
+  		resposta:'O Cartão Jovem Angola é um cartão que concede descontos a jovens de idades compreendidas entre os 15 e os 35 anos em Angola. Os descontos aplicam-se a uma gama variada de serviços e eventos, desde cinemas e farmácias a mercados e restaurantes.'
   	},
   	{
-  		pergunta:'Como posso adquirir o cartão?',
-  		resposta:'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  		pergunta:'Onde pode ser solicitado?',
+  		resposta:'O Cartão Jovem Angola pode ser solicitado em qualquer um dos nossos postos de adesão fixos ou móveis em qualquer província angolana. Pode também ser solicitado online.'
   	},
   	{
-  		pergunta:'Onde estão localizados?',
-  		resposta:'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.'
+  		pergunta:'Quanto Custa?',
+  		resposta:'Dos 15 aos 25 anos de idade – 1500kzs',
+  		resposta1:'Dos 25 aos 35 anos de idade – 2500kzs'
+  	},
+  	{
+  		pergunta:'Qual a idade necessária?',
+  		resposta:'A idade necessária para aderir ao Cartão Jovem Angola vai dos 15 aos 35 anos, havendo variação de preços de acordo à idade.'
+  	},
+  	{
+  		pergunta:'Qual a validade do Cartão Jovem Angola?',
+  		resposta:'O Cartão Jovem Angola só é válido por 1 ano após adesão, ou seja, é um cartão que requer renovação anual.'
   	}
   ]
 

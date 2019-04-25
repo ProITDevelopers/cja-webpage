@@ -6,14 +6,30 @@
     <li data-target="#carouselExampleSlidesOnly1" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
+
     <div class="carousel-item active">
-        <img src="assets/images/JovensMais Shoot.jpg" class="d-block w-100 h-100" alt="...">
+      <div class="overlay"></div>
+      <img src="assets/images/JovensMais Shoot.jpg" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h2>Jeito Bué Jovem de Viver!</h2>
+        <h5>Cartão Jovem Angola, tem bué mais!</h5>
+      </div>  
     </div>
     <div class="carousel-item">
+      <div class="overlay"></div>
       <img src="assets/images/JovensMais Shoot-37.jpg" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h2>Cartão Jovem Angola, VIVE SEM LIMITES!</h2>
+        <h5>FAZ POR TI, CARTÃO JOVEM ANGOLA!</h5>
+      </div>  
     </div>
     <div class="carousel-item">
+      <div class="overlay"></div>
       <img src="assets/images/JovensMais Shoot-53.jpg" class="d-block w-100 h-100" alt="...">
+      <div class="carousel-caption d-md-block">
+        <h2>FAZ MAIS, GASTA MENOS! CARTÃO JOVEM ANGOLA!</h2>
+        <p></p>
+      </div>  
     </div>
   </div>
 </div>
@@ -25,73 +41,15 @@
       <h5 class="font-alt font-w-300 letter-spacing-2 m-0 text-uppercase title-small px-3 py-1">Parceiros em destaque</h5>
     </div><!-- //.row -->
             
-    <div class="row justify-content-center">
-      <div class="col-md-12 ">
-        <!--   <div class="row"> -->
-          <div class="carousel slide " data-ride="carousel" id="carouselExampleSlidesOnly">
-            <!-- <ol class="carousel-indicators">
-              <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
-            </ol> -->
-            <!--<div class="carousel-inner ">
-              <div class="carousel-item active">
-                <div class="row justify-content-center">
-                  <div class="col">
-                    <a href="https://www.cinemax.co.ao" target="_blank" rel="noopener"><img alt="setimo slide" class="d-block w-50" src="assets/logos/Cinemax-Menos-Fios1.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="https://www.xyami.co.ao" target="_blank" rel="noopener"><img alt="setimo slide" class="d-block w-50" src="assets/logos/Logo_xyami.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="https://www.bni.ao" target="_blank" rel="noopener"><img alt="First slide" class="d-block w-50" src="assets/logos/LOGO_BNI_WIRED.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="https://www.movicel.co.ao/" target="_blank" rel="noopener"><img alt="First slide" class="d-block w-50" src="assets/logos/movicel.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="https://www.kero.co.ao" target="_blank" rel="noopener"><img alt="First slide" class="d-block w-50" src="assets/logos/kero.png" /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col">
-                    <a href="https://www.centroopticoangola.com/" target="_blank" rel="noopener"><img alt="setimo slide" class="d-block w-50" src="assets/logos/CEOA_LOGO_MASTER.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="http://www.mecofarma.com/" target="_blank" rel="noopener"><img alt="setimo slide" class="d-block w-50" src="assets/logos/Logo_mecofarma_aobaixo.png" /></a>
-                  </div>
-                  <div class="col">
-                    <a href="http://www.jaltravel.co.ao" target="_blank" rel="noopener"><img alt="First slide" class="d-block w-50" src="assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png" />
-                    </a>
-                  </div>
-                  <div class="col">
-                    <a href="http://www.sapo.ao/" target="_blank" rel="noopener"><img alt="First slide" class="d-block w-50" src="assets/logos/SAPO_FV_Pol_P_RGB.png" /></a>
-                  </div>
-                </div>
-              </div> 
-            </div>-->
-             <!-- <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-            </a>-->
+    <!--<div class="row justify-content-center">
+      <div class="col-md-12 ">-->
+        <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']" #owlElement>
+          <div class="item" *ngFor="let image of images;let i = index ">
+            <img [src]="image" class="slide-image" />
           </div>
-        <!--</div>--> 
-      </div>
-    </div>
-    <owl-carousel
-     [options]="carouselOptions"
-     [items]="images" 
-     [carouselClasses]="['owl-theme', 'row', 'sliding']" #owlElement>
-     <div class="item" *ngFor="let image of images;let i = index ">
-         
-          <img [src]="image" class="slide-image" />
-     </div>
-    </owl-carousel>
+        </owl-carousel>
+     <!-- </div>
+    </div>-->
 	</div><!-- //.container -->
 </section>
 <section id="video" class="mt-5">

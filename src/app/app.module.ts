@@ -13,13 +13,10 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 defineLocale('pt-br', ptBrLocale); 
 
-import { DataTablesModule } from 'angular-datatables';
-import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistoComponent } from './registo/registo.component';
 import { HomeComponent } from './home/home.component';
-import { ContactosComponent } from './contactos/contactos.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NoticiasComponent } from './noticias/noticias.component';
@@ -32,7 +29,6 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     AppComponent,
     RegistoComponent,
     HomeComponent,
-    ContactosComponent,
     HeaderComponent,
     FooterComponent,
     NoticiasComponent,
@@ -48,15 +44,9 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    DataTablesModule,
     BsDatepickerModule.forRoot(),
     NgxPaginationModule,
-    OwlModule,
-    ToastrModule.forRoot({
-    timeOut: 20000,
-    positionClass: 'toast-top-right',
-    preventDuplicates: true,
-  })
+    OwlModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

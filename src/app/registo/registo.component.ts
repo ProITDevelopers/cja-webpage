@@ -1,8 +1,6 @@
 import { Component, OnInit,ViewChild ,ElementRef} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-//Notificações
-import { ToastrService } from 'ngx-toastr';
 //Calendar
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
@@ -17,7 +15,7 @@ import { ServicoService} from '../servicos/servico.service';
 export class RegistoComponent implements OnInit {
 
   constructor(private membroService:ServicoService,private datePipe: DatePipe,
-  	private toastr: ToastrService,private localeService: BsLocaleService) { 
+    private localeService: BsLocaleService) { 
   	this.minDate = new Date();
     this.maxDate = new Date();
     this.minDate.setDate(this.minDate.getDate() - 12775);//Idade maxima 35
@@ -38,8 +36,6 @@ export class RegistoComponent implements OnInit {
    file1=false;
   ngOnInit() {
     this.membro.genero='Masculino';
-    //Chamar toastr no init
-  	/*setTimeout(() => this.toastr.success('sup'))*/
   }
   //Controle checkbox
   termoChange() {
@@ -117,25 +113,10 @@ export class RegistoComponent implements OnInit {
          this.dados=error.error;
          this.mensagem=error.error;
         
-        })/**/
+        })
     });
 
     reader.readAsDataURL(this.file);
   }
-   showSuccess(id) {
-    this.toastr.success('Registo feito com sucesso! O número de cartão é: ' +id, 'Success!');
-  }
-    
-  showError() {
-    //this.toastr.error('Algo não está bem!'+ this.dados.mensagem, 'Oops!');
-  }
-  showWarning(mensagem) {
-    this.toastr.warning(mensagem, 'Alert!');
-  }
-    
-  showInfo() {
-    this.toastr.info('Just some information for you.');
-  }
-
 
 }

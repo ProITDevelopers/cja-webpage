@@ -30,7 +30,6 @@ export class ServicoService {
     formData.append('telemovel', membro.telemovel);
     formData.append('bi', membro.bi);
     formData.append('genero', membro.genero);
-    //formData.append('password', 'hhhj');
     return this.http.post(this.url, formData);
    }
 }
