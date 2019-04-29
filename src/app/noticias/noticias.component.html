@@ -10,8 +10,8 @@
 					<div class="col-md-3 mb-3" *ngFor=" let noticia of noticias1 | paginate: { itemsPerPage: 8, currentPage: p }; let i= index ">
 						<div class="card-deck">
 							<div class="card" >
-							  <img *ngIf="noticia.src" [src]="noticia.src" class="card-img-top" alt="...">
-							  <img *ngIf="noticia.src == ''" src="assets/images/JovensMais Shoot-9.jpg" class="card-img-top" alt="...">
+							  <img *ngIf="noticia.src" [src]="noticia.src" class="card-img-top" [alt]="'noticia'+i">
+							  <img *ngIf="noticia.src == ''" src="assets/images/JovensMais Shoot-9.jpg" class="card-img-top" [alt]="'noticia'+i">
 							  <div class="card-body">
 							  	<h6 class="card-title">
 							     <a [href]="noticia.url" target="_blank" rel="noopener">{{noticia.title}}</a>

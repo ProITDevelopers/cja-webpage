@@ -14,18 +14,47 @@ export class HomeComponent implements OnInit {
   }
   @ViewChild('owlElement') owlElement: OwlCarousel;
   images = [
+    {
+      src:'assets/logos/Logo_xyami.png',
+      site:'https://www.xyami.co.ao'
+    },
+    {
+      src:'assets/logos/LOGO_BNI_WIRED.png',
+      site:'https://www.bni.ao'
+    },
+    {
+      src:'assets/logos/CEOA_LOGO_MASTER.png',
+      site:'https://www.centroopticoangola.com/'
+    },
+    {
+      src:'assets/logos/Logo_mecofarma_aobaixo.png',
+      site:'https://www.mecofarma.com'
+    },
+    {
+      src:'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
+      site:'https://www.jaltravel.co.ao'
+    },
+    {
+      src:'assets/logos/SAPO_FV_Pol_P_RGB.png',
+      site:'https://www.sapo.ao'
+    },
+    {
+      src:'assets/logos/Logotipo ENSA.png',
+      site:'https://www.ensa.co.ao'
+    },
+    {
+      src:'assets/logos/zahara.png',
+      site:'https://zahara.xyami.co.ao'
+    },
+    {
+      src:'assets/logos/kero1.png',
+      site:'https//:http://www.kero.co.ao/'
+    },
+    {
+      src:'assets/logos/Logo_Cinemax_black-02.png',
+      site:'https://www.cinemax.co.ao/'
+    },
     
-    'assets/logos/Logo_xyami.png',
-    'assets/logos/LOGO_BNI_WIRED.png',
-    //'assets/logos/movicel.png',
-    'assets/logos/CEOA_LOGO_MASTER.png',
-    'assets/logos/Logo_mecofarma_aobaixo.png',
-    'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
-    'assets/logos/SAPO_FV_Pol_P_RGB.png',
-    'assets/logos/Logotipo ENSA.png',
-    'assets/logos/zahara.png',
-    'assets/logos/kero1.png',
-    'assets/logos/Logo_Cinemax_black-02.png'
     
   ];
   carouselOptions = {

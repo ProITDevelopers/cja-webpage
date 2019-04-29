@@ -146,9 +146,9 @@
         
         <div class="form-group row">
           <div class="col-sm-9">
-             <button type="submit" id="myButton" class="btn btn-default mr-1" [disabled]="!membroF.form.valid || !termo || !imageInput.value"> Registrar </button>
+             <button type="submit" id="myButton" name="btnRegisto" class="btn btn-default mr-1" [disabled]="!membroF.form.valid || !termo || !imageInput.value"> Registrar </button>
 
-            <button type="button" class="btn btn-outline-secondary" (click)="clean(membroF)"> Repor </button>
+            <button type="button" name="btnRepor" class="btn btn-outline-secondary" (click)="clean(membroF)"> Repor </button>
           </div>
         </div>
         <div class="alert alert-success" role="alert" *ngIf="mensagem">

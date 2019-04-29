@@ -31,6 +31,14 @@
                         </div> -->
                         <div class="col-md-4 col-sm-4 mb-4">
                             <a class="font-weight-bold text-uppercase title-small px-3 py-1" href="#">Emissão online</a>
+                            <!--<ul class="nav flex-column mt-3">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img width="150" class="img-fluid" src="assets/images/appstoreok.png" alt="appstore"></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://play.google.com/store/apps/details?id=cjacartaojovem.com.cjacartaojovem" class="nav-link" target="_blank" rel="noopener"><img class="img-fluid" width="150" src="assets/images/playok.png" alt="play"></a>
+                                </li>
+                            </ul>-->
                         </div>
                         <div class="col-md-4 col-sm-4 mb-4">
                         	<p >
@@ -44,16 +52,19 @@
                 <div class="col-md-4 col-sm-12">
                     <form (ngSubmit)="enviarMensagem(mensagemF)" #mensagemF="ngForm" novalidate >
                         <div class="form-group">
+                            <label for="nome" class="sr-only">Nome</label>
                             <input type="email" class="form-control" id="nome" name="nome1" placeholder="Nome" [(ngModel)]="mensagem.nome" #nomeI="ngModel" autocomplete="off" required>
                           </div>
                           <div class="form-group">
+                            <label for="email" class="sr-only">Email</label>
                             <input type="email" class="form-control" id="email" name="email1" placeholder="email@example.com" [(ngModel)]="mensagem.email" #emailI="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" autocomplete="off" required>
                         </div>
                         <div class="form-group">
+                            <label for="mensagem" class="sr-only">Mensagem</label>
                             <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem" name="mensagem1" [(ngModel)]="mensagem.mensagem" #mensagemI="ngModel" autocomplete="off" required></textarea>
                         </div>
                         <div class="ml-auto">
-                            <button type="submit" id="enviar" class="btn btn-default" [disabled]="!mensagemF.form.valid">Enviar</button>
+                            <button type="submit" name="btnEnviar" id="enviar" class="btn btn-default" [disabled]="!mensagemF.form.valid">Enviar</button>
                         </div>
                     </form>
                 </div>

@@ -13,6 +13,9 @@
 		height: 50px;
 	}
 }
+.navbar-light .navbar-nav .nav-link{
+	color: #fff;
+}
 i{
 	color: white;
 }
