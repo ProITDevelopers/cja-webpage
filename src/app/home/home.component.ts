@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   images = [
     {
       src:'assets/logos/Logo_xyami.png',
-      site:'https://www.xyami.co.ao'
+      site:'http://www.xyami.co.ao'
     },
     {
       src:'assets/logos/LOGO_BNI_WIRED.png',
