@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     },
     {
       src:'assets/logos/LOGO_BNI_WIRED.png',
-      site:'https://www.bni.ao'
+      site:'http://www.bni.ao'
     },
     {
       src:'assets/logos/CEOA_LOGO_MASTER.png',
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     },
     {
       src:'assets/logos/Logo_mecofarma_aobaixo.png',
-      site:'https://www.mecofarma.com'
+      site:'http://www.mecofarma.com'
     },
     {
       src:'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
@@ -44,15 +44,23 @@ export class HomeComponent implements OnInit {
     },
     {
       src:'assets/logos/zahara.png',
-      site:'https://zahara.xyami.co.ao'
+      site:'http://zahara.xyami.co.ao'
     },
     {
       src:'assets/logos/kero1.png',
-      site:'https//:http://www.kero.co.ao/'
+      site:'http://www.kero.co.ao/'
+    },
+    {
+      src:'assets/logos/tupuca.jpg',
+      site:'https://tupuca.com'
     },
     {
       src:'assets/logos/Logo_Cinemax_black-02.png',
-      site:'https://www.cinemax.co.ao/'
+      site:'http://www.cinemax.co.ao/'
+    },
+    {
+      src:'assets/logos/tleva.png',
+      site:'#'
     },
     
     
