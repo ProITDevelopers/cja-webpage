@@ -12,10 +12,33 @@
 	.navbar-brand img {
 		height: 50px;
 	}
+	.navbar-light .navbar-nav .nav-link{
+		color: #fff;
+		font-weight: bolder;
+		font-size: 14px;
+	}
+	.navbar-light .navbar-nav .nav-link.active{
+		color: #fff;
+		font-size: 16px;
+	}
+	.navbar-light .navbar-nav .nav-link:hover{
+		color: #fff;
+		font-size: 18px;
+	}
 }
 .navbar-light .navbar-nav .nav-link{
 	color: #fff;
+	font-weight: bolder;
+	font-size: 18px;
+}
+.navbar-light .navbar-nav .nav-link.active{
+	color: #fff;
+	font-size: 20px;
 }
 i{
 	color: white;
 }
+.navbar-light .navbar-nav .nav-link:hover{
+	color: #fff;
+	font-size: 22px;
+}/**/
