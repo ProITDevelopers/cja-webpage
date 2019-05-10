@@ -1,5 +1,7 @@
 .navbar,.navbar-light{
-	background-color:#dc0461
+	background-color:#dc0461;
+	/*z-index: -2;
+	opacity: 0.4;*/
 }
 .navbar-brand img{
 	/*position: absolute;

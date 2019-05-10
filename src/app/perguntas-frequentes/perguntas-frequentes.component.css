@@ -6,8 +6,11 @@
     min-height: 60vh;
 }
 h3{
-	color: #dc0461;
+	color: #fff;
 }
 .btn-link,.btn-link:hover{
 	color: #dc0461;
 }
+/*.card-header{
+	background-image: url("/assets/Padrão_Cja.jpg");
+}*/
