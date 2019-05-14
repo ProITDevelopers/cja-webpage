@@ -5,7 +5,7 @@
       
       <h2 class="text-center my-3">Registo de cartão jovem Angola</h2>
       <form (ngSubmit)="cadastrarMembro(membroF)" #membroF="ngForm" novalidate >
-        <div class="form-grupo row"> 
+        <div class="form-group row"> 
           <div class="col-sm-6" >
             <label class=" col-form-label">Nome próprio<span >*</span></label>
             <div  [class.has-success]="nome.valid && ( nome.dirty || nome.touched)" [class.has-danger]="!nome.valid && ( nome.dirty || nome.touched)"> 
