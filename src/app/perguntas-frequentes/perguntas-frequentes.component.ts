@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicoService} from '../servicos/servico.service';
 
 @Component({
   selector: 'app-perguntas-frequentes',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerguntasFrequentesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private perguntasService:ServicoService) { }
 
   ngOnInit() {
+    //this.listarPerguntas();
   }
   perguntas=[
   	{
@@ -33,6 +35,12 @@ export class PerguntasFrequentesComponent implements OnInit {
   		pergunta:'Qual a validade do Cartão Jovem Angola?',
   		resposta:'O Cartão Jovem Angola só é válido por 1 ano após adesão, ou seja, é um cartão que requer renovação anual.'
   	}
-  ]
-
+  ];
+  perguntasC:any;
+  listarPerguntas(){
+    this.perguntasService.todasPerguntas().subscribe(data => {
+      // set items to json response
+      this.perguntasC = data;
+    });
+  }
 }

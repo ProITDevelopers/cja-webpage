@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {OwlCarousel} from 'ngx-owl-carousel';
+import { ServicoService} from '../servicos/servico.service';
 
 @Component({
   selector: 'app-home',
@@ -8,60 +9,79 @@ import {OwlCarousel} from 'ngx-owl-carousel';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private parceirosService:ServicoService) { }
 
   ngOnInit() {
+    //this.listarParceiros();
   }
   @ViewChild('owlElement') owlElement: OwlCarousel;
+  imagesP:any;
   images = [
-    {
-      src:'assets/logos/Logo_xyami.png',
+    {  
+      entidade:'Xyami',
+      url:'assets/logos/Logo_xyami.png',
       site:'http://www.xyami.co.ao'
     },
-    {
-      src:'assets/logos/LOGO_BNI_WIRED.png',
+    { 
+      entidade:'Bni', 
+      url:'assets/logos/LOGO_BNI_WIRED.png',
       site:'http://www.bni.ao'
     },
     {
-      src:'assets/logos/CEOA_LOGO_MASTER.png',
+      entidade:'centro optico',
+      url:'assets/logos/CEOA_LOGO_MASTER.png',
       site:'https://www.centroopticoangola.com/'
     },
     {
-      src:'assets/logos/Logo_mecofarma_aobaixo.png',
+      entidade:'Mecofarma',
+      url:'assets/logos/Logo_mecofarma_aobaixo.png',
       site:'http://www.mecofarma.com'
     },
     {
-      src:'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
+      entidade:'Jaltravel',
+      url:'assets/logos/Logotipo_JAL_Travel_Graphix_2017-04.png',
       site:'https://www.jaltravel.co.ao'
     },
     {
-      src:'assets/logos/SAPO_FV_Pol_P_RGB.png',
+      entidade:'Sapo',
+      url:'assets/logos/SAPO_FV_Pol_P_RGB.png',
       site:'https://www.sapo.ao'
     },
     {
-      src:'assets/logos/Logotipo ENSA.png',
+      entidade:'Ensa',
+      url:'assets/logos/Logotipo ENSA.png',
       site:'https://www.ensa.co.ao'
     },
     {
-      src:'assets/logos/zahara.png',
+      entidade:'Zahara',
+      url:'assets/logos/zahara.png',
       site:'http://zahara.xyami.co.ao'
     },
     {
-      src:'assets/logos/kero1.png',
+      entidade:'Kero',
+      url:'assets/logos/kero1.png',
       site:'http://www.kero.co.ao/'
     },
     {
-      src:'assets/logos/tupuca.jpg',
+      entidade:'Tupuca',
+      url:'assets/logos/tupuca.jpg',
       site:'https://tupuca.com'
     },
     {
-      src:'assets/logos/Logo_Cinemax_black-02.png',
+      entidade:'Cinemax',
+      url:'assets/logos/Logo_Cinemax_black-02.png',
       site:'http://www.cinemax.co.ao/'
     },
     {
-      src:'assets/logos/tleva.png',
+      entidade:'Tleva',
+      url:'assets/logos/tleva.png',
       site:'#'
     },
+    {
+      entidade:'Rock Burger',
+      url:'assets/logos/RRJW1351.JPG',
+      site:'#'
+    }
     
     
   ];
@@ -97,5 +117,11 @@ export class HomeComponent implements OnInit {
         loop: false
       }
     }
+  }
+  listarParceiros(){
+    this.parceirosService.todosParceiros().subscribe(data => {
+      // set items to json response
+      this.imagesP = data;
+    });
   }
 }
