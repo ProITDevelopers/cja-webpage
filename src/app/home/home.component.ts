@@ -81,9 +81,52 @@ export class HomeComponent implements OnInit {
       entidade:'Rock Burger',
       url:'assets/logos/RRJW1351.JPG',
       site:'#'
+    },
+    {
+      entidade:'CLÉ ENTERTAINMENT',
+      url:'assets/logos/CLÉ ENTERTAINMENT-01.jpg',
+      site:'https://www.cleentertainment.co.ao/'
+    },
+    {
+      entidade:'Farmácias de Angola',
+      url:'assets/logos/Farmácias de Angola.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Mo',
+      url:'assets/logos/Mo.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Sportzone',
+      url:'assets/logos/Sportzone.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Springfield',
+      url:'assets/logos/Springfield.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Swatch+',
+      url:'assets/logos/Swatch+.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Top Brands Angola',
+      url:'assets/logos/TBA.JPG',
+      site:'#'
+    },
+    {
+      entidade:'Womens´Secret',
+      url:'assets/logos/Womens´Secret.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Worten',
+      url:'assets/logos/Worten.jpg',
+      site:'#'
     }
-    
-    
   ];
   carouselOptions = {
     margin: 25,

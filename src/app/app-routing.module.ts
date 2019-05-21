@@ -7,6 +7,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { RegulamentoComponent } from './regulamento/regulamento.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { JovensmaisComponent } from './jovensmais/jovensmais.component';
 
 const routes: Routes = [
 	{
@@ -54,6 +55,13 @@ const routes: Routes = [
     component: NoticiasComponent,
     data: {
       title: 'Notícias'
+    }
+  },
+  {
+    path: 'jovensmais',
+    component: JovensmaisComponent,
+    data: {
+      title: 'Jovens Mais'
     }
   },
   { path: '**', redirectTo: '/inicio' }

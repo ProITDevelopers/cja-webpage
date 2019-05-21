@@ -90,3 +90,22 @@ i{
   width: 90% !important;
   margin: 10% auto;
 }
+.owl-carousel .owl-item img:hover {
+  /*transition: filter .5s ease-in-out;
+  -webkit-filter: grayscale(0%); *//* Ch 23+, Saf 6.0+, BB 10.0+ */
+  /*filter: grayscale(0%); *//* FF 35+ */
+}
+.owl-carousel .owl-item img {
+ /* Ch 23+, Saf 6.0+, BB 10.0+ */
+  /*-webkit-filter: grayscale(100%);*/
+ /* filter: grayscale(100%);*/ /* FF 35+ */
+}
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}

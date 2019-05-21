@@ -14,3 +14,19 @@ h3{
 /*.card-header{
 	background-image: url("/assets/Padrão_Cja.jpg");
 }*/
+.background-image{
+	/* The image used */
+    /* Full height 
+    position: fixed;*/
+    width: 100%;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+   /* padding-top: 15%;
+     z-index: -1;
+    opacity: 0.6;*/
+   /*padding-bottom: 15%; */
+}

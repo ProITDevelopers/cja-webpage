@@ -23,6 +23,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { RegulamentoComponent } from './regulamento/regulamento.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { JovensmaisComponent } from './jovensmais/jovensmais.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     NoticiasComponent,
     PerguntasFrequentesComponent,
     RegulamentoComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    JovensmaisComponent
   ],
   imports: [
     BrowserModule,
