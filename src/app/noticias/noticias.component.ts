@@ -112,7 +112,7 @@ export class NoticiasComponent implements OnInit {
 
   ngOnInit() {
   	this.p=1;
-    this.listarNoticias();
+    //this.listarNoticias();
   }
   listarNoticias(){
     this.noticiasService.todasNoticias().subscribe(data => {

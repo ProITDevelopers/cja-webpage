@@ -22,11 +22,6 @@ export class HomeComponent implements OnInit {
       url:'assets/logos/Logo_xyami.png',
       site:'http://www.xyami.co.ao'
     },
-    { 
-      entidade:'Bni', 
-      url:'assets/logos/LOGO_BNI_WIRED.png',
-      site:'http://www.bni.ao'
-    },
     {
       entidade:'centro optico',
       url:'assets/logos/CEOA_LOGO_MASTER.png',

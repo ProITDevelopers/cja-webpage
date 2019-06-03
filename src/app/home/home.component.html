@@ -43,7 +43,7 @@
     <!--<div class="row justify-content-center">
       <div class="col-md-12 ">-->
         <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']" #owlElement>
-          <div class="item" *ngFor="let image of images;let i = index ">
+          <div class="item zoom" *ngFor="let image of images;let i = index ">
             <a [href]="image.site" target="_blank" rel="noopener"><img [src]="image.url" class="slide-image" [alt]="'parceiro'+i" /></a>
           </div>
         </owl-carousel>
