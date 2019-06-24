@@ -90,9 +90,9 @@ i{
   width: 90% !important;
   margin: 10% auto;
 }
-.owl-carousel .owl-item .item{
+/*.owl-carousel .owl-item .item{
   width:100px
-}
+}*/
 .owl-carousel .owl-item img:hover {
   /*transition: filter .5s ease-in-out;
   -webkit-filter: grayscale(0%); *//* Ch 23+, Saf 6.0+, BB 10.0+ */
