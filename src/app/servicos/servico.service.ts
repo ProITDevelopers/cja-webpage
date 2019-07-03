@@ -10,7 +10,7 @@ export class ServicoService {
 
   constructor(private http:HttpClient) { }
   url="https://mediarumo.herokuapp.com/cja";
-  urlNot="https://mediarumo.herokuapp.com/cja/noticia";
+  urlNot="https://mediarumo.herokuapp.com/cja/noticia/all";
   urlParc="https://mediarumo.herokuapp.com/cja/parceiro";
   urlperg="https://mediarumo.herokuapp.com/cja/gergunta";
 

@@ -24,8 +24,7 @@ export class PerguntasFrequentesComponent implements OnInit {
   	},
   	{
   		pergunta:'Quanto Custa?',
-  		resposta:'Dos 15 aos 25 anos de idade – 1500kzs',
-  		resposta1:'Dos 25 aos 35 anos de idade – 2500kzs'
+  		resposta:'Dos 15 aos 35 anos de idade – 2500kzs',
   	},
   	{
   		pergunta:'Qual a idade necessária?',
