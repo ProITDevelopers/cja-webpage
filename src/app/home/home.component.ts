@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import {OwlCarousel} from 'ngx-owl-carousel';
 import { ServicoService} from '../servicos/servico.service';
+import { GoogleAnaliticsService } from '../servicos/google-analitics.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,12 @@ import { ServicoService} from '../servicos/servico.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private parceirosService:ServicoService) { }
+  constructor(private parceirosService:ServicoService,
+              private gaService:GoogleAnaliticsService) { }
 
   ngOnInit() {
     //this.listarParceiros();
+    //this.submitEventVideo();
   }
   @ViewChild('owlElement') owlElement: OwlCarousel;
   imagesP:any;
@@ -53,6 +56,11 @@ export class HomeComponent implements OnInit {
       site:'http://zahara.xyami.co.ao'
     },
     {
+      entidade:'Bonws Seguros',
+      url:'assets/logos/Bonws Seguros.png',
+      site:'#'
+    },
+    {
       entidade:'Kero',
       url:'assets/logos/kero1.png',
       site:'http://www.kero.co.ao/'
@@ -68,6 +76,16 @@ export class HomeComponent implements OnInit {
       site:'http://www.cinemax.co.ao/'
     },
     {
+      entidade:'Instituto Angolano da Juventude',
+      url:'assets/logos/Instituto Angolano da Juventude.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Leverage',
+      url:'assets/logos/Leverage.png',
+      site:'#'
+    },
+    {
       entidade:'Tleva',
       url:'assets/logos/tleva.png',
       site:'#'
@@ -81,6 +99,11 @@ export class HomeComponent implements OnInit {
       entidade:'CLÉ ENTERTAINMENT',
       url:'assets/logos/CLÉ ENTERTAINMENT-01.jpg',
       site:'https://www.cleentertainment.co.ao/'
+    },
+    {
+      entidade:'Conexão',
+      url:'assets/logos/Conexão.jpg',
+      site:'#'
     },
     {
       entidade:'Farmácias de Angola',
@@ -120,6 +143,46 @@ export class HomeComponent implements OnInit {
     {
       entidade:'Worten',
       url:'assets/logos/Worten.jpg',
+      site:'#'
+    },
+    {
+      entidade:'NCR',
+      url:'assets/logos/NCR.jpg',
+      site:'#'
+    },
+    {
+      entidade:'Nossa Seguros',
+      url:'assets/logos/logo_nossa-seguros-01.png',
+      site:'#'
+    },
+    {
+      entidade:'CocaCola',
+      url:'assets/logos/Coca-Cola-Logo-PNG-768x361.png',
+      site:'#'
+    },
+    {
+      entidade:'Banco Keve',
+      url:'assets/logos/Logotipo com Assinatura  Keve-01.png',
+      site:'#'
+    },
+    {
+      entidade:'Tv cabo angola',
+      url:'assets/logos/Tv cabo angola logo.png',
+      site:'#'
+    },
+    {
+      entidade:'Jobartis',
+      url:'assets/logos/Jobartis-Color-300x100.png',
+      site:'#'
+    },
+    {
+      entidade:'Governo de Angola',
+      url:'assets/logos/governo-de-angola-logo.png',
+      site:'#'
+    },
+    {
+      entidade:'Green touch',
+      url:'assets/logos/Green touch logo-01.png',
       site:'#'
     }
   ];
@@ -161,5 +224,12 @@ export class HomeComponent implements OnInit {
       // set items to json response
       this.imagesP = data;
     });
+  }
+  submitEventVideo() {
+    /*const video=document.getElementById("promovideo");
+    video.onplaying = function() {
+      alert("The video is now playing");
+    };  */
+    this.gaService.emitEvent("Video", "play", "Promo Video", 10);
   }
 }

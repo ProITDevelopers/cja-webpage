@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  code: 'UA-143261260-1'
 };

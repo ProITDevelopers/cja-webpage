@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { filter } from 'rxjs/operators';
+import { environment} from './../environments/environment';
 declare var gtag;
 declare var ga;
 
@@ -12,6 +13,11 @@ import { Router,NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'cja';
   constructor(private router: Router) {
+
+  	const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + environment.code;
+    document.head.prepend(script);﻿
   	const navEndEvents = router.events.pipe(
       filter(
         event => event instanceof NavigationEnd
@@ -19,15 +25,15 @@ export class AppComponent {
     );
     navEndEvents.subscribe(
       (event: NavigationEnd) => {
-        gtag('config', 'UA-143261260-1', {
+        gtag('config', environment.code, {
           page_path: event.urlAfterRedirects,
         });
       }
     );
     /*this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        (<any>window).ga('set', 'page', event.urlAfterRedirects);
-        (<any>window).ga('send', 'pageview');
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
       }
     });*/
   }

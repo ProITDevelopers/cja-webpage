@@ -51,10 +51,10 @@ const routes: Routes = [
     }
   },
   {
-    path: 'noticias',
+    path: 'comunidade-jovem',
     component: NoticiasComponent,
     data: {
-      title: 'Notícias'
+      title: 'Comunidade Jovem'
     }
   },
   {
