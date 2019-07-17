@@ -1,6 +1,7 @@
 import { Component, OnInit,ViewChild ,ElementRef} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { Observable } from 'rxjs';
 //Calendar
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 
@@ -33,8 +34,13 @@ export class RegistoComponent implements OnInit {
   mensagem:string;
   selectedFile: ImageSnippet;
   file: File;
-   file1=false;
+  file1=false;
+
+  municipios:Observable<any[]>;
+  cidades:Observable<any[]>;
+
   ngOnInit() {
+    this.getCidades();
     this.membro.genero='Masculino';
   }
   //Controle checkbox
@@ -117,6 +123,15 @@ export class RegistoComponent implements OnInit {
     });
 
     reader.readAsDataURL(this.file);
+  }
+  getCidades(){
+    this.cidades=this.membroService.cidades();
+  }
+  onSelect(municipio){
+    if (municipio != '') {
+      this.municipios=this.membroService.municipios(municipio);
+    }
+    
   }
 
 }

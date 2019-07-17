@@ -2,19 +2,19 @@
 <section id="noticias">
 	<div class="container mb-3">
 		<div class="row justify-content-center">
-			<h3 class="font-alt font-w-700 letter-spacing-2 m-4 text-uppercase title-small">Notícias</h3>
+			<h3 class="font-alt font-w-700 letter-spacing-2 m-4 text-uppercase title-small">Comunidade Jovem</h3>
 		</div>
-		<div *ngIf=" noticias as noticias1; else loading">
+		<div *ngIf=" noticiasC as noticias1; else loading">
 			<ng-container *ngIf=" noticias1.length; else noItems">
 				<div class="row p-3">
 					<div class="col-md-3 mb-3" *ngFor=" let noticia of noticias1 | paginate: { itemsPerPage: 8, currentPage: p }; let i= index ">
 						<div class="card-deck">
 							<div class="card" >
-							  <img *ngIf="noticia.src" [src]="noticia.src" class="card-img-top" [alt]="'noticia'+i">
-							  <img *ngIf="noticia.src == ''" src="assets/images/JovensMais Shoot-9.jpg" class="card-img-top" [alt]="'noticia'+i">
+							  <img *ngIf="noticia.imagem" [src]="noticia.imagem" class="card-img-top" [alt]="'noticia'+i">
+							  <img *ngIf="noticia.imagem == ''" src="assets/images/JovensMais Shoot-9.jpg" class="card-img-top" [alt]="'noticia'+i">
 							  <div class="card-body">
 							  	<h6 class="card-title">
-							     <a [href]="noticia.url" target="_blank" rel="noopener">{{noticia.title}}</a>
+							     <a [href]="noticia.url" target="_blank" rel="noopener">{{noticia.titulo}}</a>
 							 	</h6>
 							  </div>
 							</div>
@@ -25,7 +25,7 @@
 					<pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true" previousLabel="Anterior" nextLabel="Próxima"></pagination-controls>
 				</div>
 			</ng-container>
-			<ng-template #noItems>Sem notícias para apresentar!</ng-template>
+			<ng-template #noItems>Sem novidades para apresentar!</ng-template>
 		</div>
 		<ng-template #loading ><i class="fa fa-spinner fa-spin" style="font-size:60px"></i></ng-template>
 	</div>

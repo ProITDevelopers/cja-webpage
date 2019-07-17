@@ -10,9 +10,10 @@ export class ServicoService {
 
   constructor(private http:HttpClient) { }
   url="https://mediarumo.herokuapp.com/cja";
-  urlNot="https://mediarumo.herokuapp.com/cja/noticia/all";
+  urlNot="https://mediarumo.herokuapp.com/cja/noticia";
   urlParc="https://mediarumo.herokuapp.com/cja/parceiro";
   urlperg="https://mediarumo.herokuapp.com/cja/gergunta";
+  urlCidade="https://cidade.herokuapp.com/";
 
   headers = new HttpHeaders();
    
@@ -28,8 +29,8 @@ export class ServicoService {
     formData.append('apelido', membro.apelido);
     formData.append('dataNascimento', membro.dataNascimento);
     formData.append('email', membro.email);
-    formData.append('rua', membro.rua);
-    formData.append('cidade', membro.cidade);
+    formData.append('provincia', membro.provincia);
+    formData.append('municipio', membro.municipio);
     formData.append('telemovel', membro.telemovel);
     formData.append('bi', membro.bi);
     formData.append('genero', membro.genero);
@@ -44,4 +45,11 @@ export class ServicoService {
   todasPerguntas():Observable<any>{
     return this.http.get(this.urlperg,{ headers: this.headers });
   }
+  cidades():Observable<any>{
+    return this.http.get(this.urlCidade+'region');
+   }
+   //municipios
+   municipios(regiao):Observable<any>{
+     return this.http.get(this.urlCidade+'city='+regiao);
+   }
 }

@@ -21,14 +21,14 @@ const routes: Routes = [
     data: {
       title: 'Início'
     }
-  }/*,
+  },
 	{
     path: 'registo-cartao',
     component: RegistoComponent,
     data: {
       title: 'Registo de Cartão jovem'
     }
-  }*/,
+  }/**/,
   {
     path: 'sobre-nos',
     component: SobreNosComponent,

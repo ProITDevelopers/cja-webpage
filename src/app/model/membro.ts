@@ -3,11 +3,13 @@ export class Membro {
 	apelido:string;
 	dataNascimento:string;
 	email:string;
-	rua:string;
-	cidade:string;
+	//rua:string;
+	//cidade:string;
 	telemovel:string;
 	bi:string;
 	genero:string;
+	provincia?:string;
+	municipio?:string
 
 	constructor(){}
 }

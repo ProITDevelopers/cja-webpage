@@ -13,7 +13,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu nome" required name="nome" [(ngModel)]="membro.nomeProprio" pattern="^[a-zA-Z]{1,20}$" #nome="ngModel" autocomplete="off">
+                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu nome" required name="nome" [(ngModel)]="membro.nomeProprio" pattern="[A-Za-zÀ-ú ']{3,}" #nome="ngModel" autocomplete="off">
               </div>
               <div class="mt-1" *ngIf="!nome.valid && ( nome.dirty || nome.touched)" >
                 <span *ngIf="nome.errors.required" class="form-text">*Campo obrigatório.</span>
@@ -28,7 +28,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
                 </div>
-                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu apelido" required name="apelido" [(ngModel)]="membro.apelido" pattern="^[a-zA-Z]{1,20}$" #apelido="ngModel" autocomplete="off">
+                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu apelido" required name="apelido" [(ngModel)]="membro.apelido" pattern="[A-Za-zÀ-ú ']{3,}" #apelido="ngModel" autocomplete="off">
               </div>
               <div class="mt-1" *ngIf="!apelido.valid && ( apelido.dirty || apelido.touched)" >
                   <span *ngIf="apelido.errors.required" class="form-text">*Campo obrigatório.</span>
@@ -56,7 +56,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="sizing-addon1"><i class="fa fa-file-text"></i></span>
                 </div>
-                <input type="text" class="form-control form-control-sm" placeholder="123456789AZ001" required maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel" pattern="^[0-9]{9}[a-zA-Z]{2}[0-9]{3}" autocomplete="off">
+                <input type="text" class="form-control form-control-sm" placeholder="123456789AZ001" required maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel" pattern="^[0-9]{9}[A-Z]{2}[0-9]{3}" autocomplete="off">
               </div>
               <div class="mt-1" *ngIf="!bi.valid && ( bi.dirty || bi.touched)" >
                 <span *ngIf="bi.errors.required" class="form-text">*Campo obrigatório.</span>
@@ -69,16 +69,16 @@
         </div>
         <div class="form-group row">  
           <div class="col-sm-6">
-            <label class="col-form-label">E-mail<span >*</span></label>
+            <label class="col-form-label">E-mail (Opcional)</label>
             <div  [class.has-success]="email.valid && ( email.dirty || email.touched)" [class.has-danger]="!email.valid && ( email.dirty || email.touched)">  
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="sizing-addon1"><i class="fa fa-envelope"></i></span>
                 </div>
-                <input type="email" class="form-control form-control-sm" placeholder="email@email.com" required  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" [(ngModel)]="membro.email" #email="ngModel" autocomplete="off">
+                <input type="email" class="form-control form-control-sm" placeholder="email@email.com" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" [(ngModel)]="membro.email" #email="ngModel" autocomplete="off">
               </div>
               <div class="mt-1" *ngIf="!email.valid && (email.dirty || email.touched)" >
-                <span *ngIf="email.errors.required" class="form-text">*Campo obrigatório.</span>
+                <!-- <span *ngIf="email.errors.required" class="form-text">*Campo obrigatório.</span> -->
                 <span *ngIf="email.errors.pattern" class="form-text">Email inválido</span>
               </div> 
             </div>
@@ -102,7 +102,7 @@
             <span class="mensagem" *ngIf="dados?.telemovel">{{dados.telemovel}}</span>
           </div>
         </div>
-        <div class="form-group row"> 
+        <!-- <div class="form-group row"> 
           <div class="col-sm-6">
             <label class="col-form-label">Rua<span >*</span></label>
             <div  [class.has-success]="rua.valid && ( rua.dirty || rua.touched)" [class.has-danger]="!rua.valid && ( rua.dirty || rua.touched)"> 
@@ -117,7 +117,34 @@
               <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)"><span class="form-text">*Campo obrigatório</span></div>
             </div>
           </div>
-        </div> 
+        </div>  -->
+        <div class="form-group row"><!--Inicio div row--> 
+          <div class="col-sm-6"><!--Inicio div cidade-->
+            <label class="col-form-label" for="cidade1">Cidade<span >*</span></label>
+            <div  [class.has-success]="cidade.valid && ( cidade.dirty || cidade.touched)" [class.has-danger]="!cidade.valid && ( cidade.dirty || cidade.touched)">
+              <select class="form-control" name="cidade" id="cidade1" [(ngModel)]="membro.cidade" (change)="onSelect($event.target.value)" #cidade="ngModel" required>
+                  <option *ngIf="cidades==null" value="">--Escolha a cidade--</option>  
+                    <option *ngFor=" let cidade of cidades | async" [value]="cidade.provincia">{{cidade.provincia}}</option> 
+              </select>
+              <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)">
+                <span *ngIf="cidade.errors.required" class="form-text">*Campo obrigatório.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6"><!-- Inicio div municipio -->
+            <label class="col-form-label" for="municipio1">Município<span >*</span></label>
+            <div  [class.has-success]="municipio.valid && ( municipio.dirty || municipio.touched)" [class.has-danger]="!municipio.valid && ( municipio.dirty || municipio.touched)">
+              <select class="form-control" name="municipio" id="municipio1" [(ngModel)]="membro.municipio" #municipio="ngModel" required>
+                <option *ngIf="municipios == null" value="">--Escolha o município--</option><!--*ngIf="(municipios | async)?.length == 0"-->
+                    <option *ngFor=" let municipio1 of municipios | async" [value]="municipio1.municipio">  {{municipio1.municipio}}
+                    </option>
+              </select>
+              <div class="mt-1" *ngIf="!municipio.valid && ( municipio.dirty || municipio.touched)">
+                <span *ngIf="municipio.errors.required" class="form-text">*Campo obrigatório.</span>
+              </div>
+            </div> 
+          </div><!--fim div municipio-->
+        </div><!--fim div row--> 
         <div class="from-group row">
           <div class="col-sm-5" >
             <label class="col-form-label">Gênero<span >*</span></label>
@@ -134,7 +161,7 @@
           </div>
           <div class="col-sm-7">
             <div class="form-group">
-              <label for="exampleFormControlFile1">Fotografia</label>
+              <label for="exampleFormControlFile1">Fotografia<span style="color: red">*</span></label>
               <input type="file" class="form-control-file" id="exampleFormControlFile1" #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" required>
             </div>
           </div>

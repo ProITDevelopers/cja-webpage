@@ -56,11 +56,6 @@ export class HomeComponent implements OnInit {
       site:'http://zahara.xyami.co.ao'
     },
     {
-      entidade:'Bonws Seguros',
-      url:'assets/logos/Bonws Seguros.png',
-      site:'#'
-    },
-    {
       entidade:'Kero',
       url:'assets/logos/kero1.png',
       site:'http://www.kero.co.ao/'
@@ -83,7 +78,7 @@ export class HomeComponent implements OnInit {
     {
       entidade:'Leverage',
       url:'assets/logos/Leverage.png',
-      site:'#'
+      site:'https://www.leverage.co.ao/PT'
     },
     {
       entidade:'Tleva',
@@ -148,12 +143,7 @@ export class HomeComponent implements OnInit {
     {
       entidade:'NCR',
       url:'assets/logos/NCR.jpg',
-      site:'#'
-    },
-    {
-      entidade:'Nossa Seguros',
-      url:'assets/logos/logo_nossa-seguros-01.png',
-      site:'#'
+      site:'https://www.ncrangola.com'
     },
     {
       entidade:'CocaCola',
@@ -163,22 +153,22 @@ export class HomeComponent implements OnInit {
     {
       entidade:'Banco Keve',
       url:'assets/logos/Logotipo com Assinatura  Keve-01.png',
-      site:'#'
+      site:'https://www.bancokeve.ao'
     },
     {
       entidade:'Tv cabo angola',
       url:'assets/logos/Tv cabo angola logo.png',
-      site:'#'
+      site:'https://www.tvcabo.ao'
     },
     {
       entidade:'Jobartis',
       url:'assets/logos/Jobartis-Color-300x100.png',
-      site:'#'
+      site:'https://www.jobartis.com'
     },
     {
       entidade:'Governo de Angola',
       url:'assets/logos/governo-de-angola-logo.png',
-      site:'#'
+      site:'https://www.governo.gov.ao'
     },
     {
       entidade:'Green touch',
