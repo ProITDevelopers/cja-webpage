@@ -56,12 +56,12 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="sizing-addon1"><i class="fa fa-file-text"></i></span>
                 </div>
-                <input type="text" class="form-control form-control-sm" placeholder="123456789AZ001" required maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel" pattern="^[0-9]{9}[A-Z]{2}[0-9]{3}" autocomplete="off">
+                <input type="text" class="form-control form-control-sm" placeholder="123456789az001" required maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel" pattern="^[0-9]{9}[a-z]{2}[0-9]{3}" autocomplete="off">
               </div>
               <div class="mt-1" *ngIf="!bi.valid && ( bi.dirty || bi.touched)" >
                 <span *ngIf="bi.errors.required" class="form-text">*Campo obrigatório.</span>
                 <span *ngIf="bi.errors.minlength" class="form-text">Deve ter 14 caracteres</span>
-                <span *ngIf="bi.errors.pattern" class="form-text">Número do bilhete de identidade inválido. Deve ser 123456789AZ001.</span>
+                <span *ngIf="bi.errors.pattern" class="form-text">Número do bilhete de identidade inválido. Deve ser 123456789az001.</span>
               </div>
             </div>
             <span class="mensagem" *ngIf="dados?.bi">{{dados.bi}}</span>
@@ -150,11 +150,11 @@
             <label class="col-form-label">Gênero<span >*</span></label>
             <div >
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios1" value="Masculino" checked [(ngModel)]="membro.genero" #genero="ngModel" required>
+                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios1" value="masculino" checked [(ngModel)]="membro.genero" #genero="ngModel" required>
                 <label class="form-check-label" for="exampleRadios1">Masculino</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios2" value="Feminino" [(ngModel)]="membro.genero" #genero="ngModel" required>
+                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios2" value="feminino" [(ngModel)]="membro.genero" #genero="ngModel" required>
                 <label class="form-check-label" for="exampleRadios2">Feminino</label>
               </div>
             </div>

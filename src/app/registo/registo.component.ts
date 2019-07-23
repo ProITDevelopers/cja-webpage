@@ -41,7 +41,7 @@ export class RegistoComponent implements OnInit {
 
   ngOnInit() {
     this.getCidades();
-    this.membro.genero='Masculino';
+    this.membro.genero='masculino';
   }
   //Controle checkbox
   termoChange() {
@@ -69,13 +69,16 @@ export class RegistoComponent implements OnInit {
   cadastrarMembro(form){
     this.changeTextButton(true,"Processando...");
     this.membro.dataNascimento=this.datePipe.transform(this.dataNascimento, 'yyyy-MM-dd');
-  	this.membroService.uploadImage(this.selectedFile.file,this.membro).subscribe(data=> {
+  	this.membro.nomeProprio=this.membro.nomeProprio.toLowerCase();
+    this.membro.apelido=this.membro.apelido.toLowerCase();
+    this.membro.email=this.membro.email.toLowerCase();
+    /*console.log(this.membro);*/
+    this.membroService.uploadImage(this.selectedFile.file,this.membro).subscribe(data=> {
 
       console.log(data.data);
-      console.log(data.QRCode);
-      this.dados1=data.data;/**/
+      this.dados1=data.data;
       this.dados='';
-      this.mensagem='Registo feito com sucesso!';
+      this.mensagem='Inscrição feita com sucesso. Receberá um email e uma mensagem no seu telemóvel com a referência de pagamento.';
       //this.showSuccess(this.dados._id);
       setTimeout(() =>this.clean(form),9000);    
     },
@@ -83,7 +86,7 @@ export class RegistoComponent implements OnInit {
         this.changeTextButton(false,"Registrar");
        	this.dados=error.error.error;
        	this.mensagem='';
-       	//console.log(this.dados.error)
+       	console.log(error)
     });
   }
   processFile(imageInput: any) {
@@ -110,7 +113,8 @@ export class RegistoComponent implements OnInit {
         (data) => {
           console.log(data);
           this.dados=data.data;
-          this.mensagem='Registo feito com sucesso! O número de cartão é: ' +this.dados._id;
+          this.mensagem='Inscrição feita com sucesso. Receberá um email e uma mensagem no seu telemóvel com a referência de pagamento.';
+          //'Registo feito com sucesso! O número de cartão é: ' +this.dados._id;
           setTimeout(() =>this.clean(form),9000)
         },
         (error) => {
