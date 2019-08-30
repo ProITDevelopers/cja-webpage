@@ -1,0 +1,82 @@
+<app-header></app-header>
+<section id="seg_via">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <h3 class="text-center">Consulta aqui a sua referência</h3>
+        <h4 class="text-muted text-center">Gratuito</h4>
+        <form [formGroup]='pesquisaRefForm'>
+          <div class="form-group">
+            <input type="number" class="form-control" formControlName="telemovel" pattern="[9]{1}[1-9]{2}[0-9]{6}" aria-describedby="helpId"
+              placeholder="9xx-xxx-xxx">
+            <small id="helpId" class="form-text text-muted">* Insira o seu número de telefone usado no momento de
+              registo</small>
+            <button type="button" class="btn btn-default float-right" [disabled]="!pesquisaRefForm.valid"
+              *ngIf="clique === false" (click)="verificaEstado()">submeter</button>
+            <button class="btn btn-light float-right" type="button" disabled *ngIf="clique === true">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              verificando...
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row justify-content-center my-2">
+      <div class="col-sm-6">
+        <div>
+
+        </div>
+        <div class="alert alert-success" role="alert" *ngIf="dadosRef?.estado === 'PAGA'">
+          <h4 class="alert-heading">PAGA!</h4>
+          <hr>
+          <p>A referencia número: <span class="badge badge-dark">{{dadosRef.codigo}}</span> encontra-se <span
+              class="badge badge-pill badge-success">{{dadosRef?.estado}}</span>.</p>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="dadosRef?.estado === 'EXPIRADA'">
+          <h4 class="alert-heading">EXPIRADA!</h4>
+          <p>A referencia número: <span class="badge badge-dark">{{dadosRef.codigo}}</span> encontra-se <span
+              class="badge badge-pill badge-danger">{{dadosRef?.estado}}</span>.</p>
+          <hr>
+          <button type="button" class="btn btn-default" *ngIf="clique2 === false"
+            (click)="solicitarReferencia()">solicitar nova</button>
+          <button class="btn btn-defa" type="button" disabled *ngIf="clique2 === true">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            processando...
+          </button>
+        </div>
+
+        <div class="alert alert-info" role="alert" *ngIf="dadosRef?.estado === 'PENDENTE'">
+          <h4 class="alert-heading">PENDENTE!</h4>
+          <p>A referencia número: <span class="badge badge-dark">{{dadosRef.codigo}}</span> encontra-se <span
+              class="badge badge-pill badge-dark">{{dadosRef?.estado}}</span>, dirijá-se ao ATM mais próximo e
+            efectue o pagamento.</p>
+          <hr>
+          <p>Número de Entidade: <span class="badge badge-dark">00358</span></p>
+          <p>Número da Referência a pagar: <span class="badge badge-dark">{{dadosRef.codigo}}</span></p>
+          <p>Valor a pagar: <span class="badge badge-dark">{{dadosRef.valor}} kz</span></p>
+        </div>
+
+        <div class="alert alert-success" role="alert" *ngIf="mensagem2 != null">
+          <h4 class="alert-heading">SUCESSO!</h4>
+          <p>A sua nova referência foi gerada com sucesso.</p>
+          <p>Referencia número: <span class="badge badge-success">{{mensagem2?.referencia}}</span>, dirijá-se ao ATM
+            mais próximo e
+            efectue o pagamento.</p>
+          <hr>
+          <p>Número de Entidade: <span class="badge badge-dark">00358</span></p>
+          <p>Número da Referência a pagar: <span class="badge badge-dark">{{mensagem2.referencia}}</span></p>
+          <p>Valor a pagar: <span class="badge badge-dark">2500 kz</span></p>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="mensagem2 != null">
+          {{mensagem2.erro | titlecase}}.
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="mensagem != null">
+          {{mensagem.erro | titlecase}}.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<app-footer></app-footer>

@@ -11,10 +11,10 @@
       </li>
       <li class="nav-item mr-2">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/perguntas-frequentes']">Informações</a>
-      </li> 
+      </li>
       <li class="nav-item mr-2">
-        <a class="nav-link" routerLinkActive="active" href="#parceiros" aria-label="Parceiros">Parceiros</a>
-      </li> 
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/parceiros']" aria-label="Parceiros">Parceiros</a>
+      </li><!--  -->
       <li class="nav-item mr-2">
         <a class="nav-link" routerLinkActive="active" [routerLink]="['/comunidade-jovem']">Comunidade Jovem</a>
       </li>
@@ -29,10 +29,10 @@
       </li>
     </ul><!---->
     <ul class="navbar-nav mt-2 mt-lg-0">
-      
+
        <li class="nav-item mr-2">
         <a class="nav-link" href="https://www.facebook.com/CartaoJovemAngola/" target="_blank" rel="noopener" aria-label="facebook cartaojovemangola"><i class="fa fa-facebook-square fa-2x" (click)="submitEvent('Facebook')"></i></a>
-      </li> 
+      </li>
       <li class="nav-item mr-2">
         <a class="nav-link" href="https://www.instagram.com/cartaojovemangola/" target="_blank" rel="noopener" aria-label="instagram cartaojovemangola"><i class="fa fa-instagram fa-2x" aria-hidden="true" (click)="submitEvent('Instagram')"></i></a>
       </li>

@@ -8,13 +8,15 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
 import { RegulamentoComponent } from './regulamento/regulamento.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { JovensmaisComponent } from './jovensmais/jovensmais.component';
+import { SegViaComponent } from './registo/seg-via.component';
+import { ParceirosComponent } from './parceiros/parceiros.component';
 
 const routes: Routes = [
-	{
-	    path: '',
-	    redirectTo: '/inicio',
-	    pathMatch: 'full',
-	},
+  {
+    path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
   {
     path: 'inicio',
     component: HomeComponent,
@@ -22,13 +24,27 @@ const routes: Routes = [
       title: 'Início'
     }
   },
-	{
+  {
     path: 'registo-cartao',
     component: RegistoComponent,
     data: {
       title: 'Registo de Cartão jovem'
     }
-  }/**/,
+  },
+  {
+    path: 'segunda-via',
+    component: SegViaComponent,
+    data: {
+      title: 'Informação 2ª Via'
+    }
+  },
+  {
+    path: 'parceiros',
+    component: ParceirosComponent,
+    data: {
+      title: 'Parceiros CJA'
+    }
+  },
   {
     path: 'sobre-nos',
     component: SobreNosComponent,
@@ -68,7 +84,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true, anchorScrolling: 'enabled'})],
+  imports: [
+    RouterModule.forRoot(routes, { useHash: true })
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

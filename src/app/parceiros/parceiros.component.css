@@ -1,0 +1,21 @@
+#parceiros{
+    padding-top: 50px;
+    min-height: 60vh;
+}
+h3{
+	color: #fff;
+}
+.btn-link,.btn-link:hover{
+	color: #dc0461;
+}
+
+.greyscale img {
+  transition: filter .2s ease-in-out;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.greyscale img:hover {
+  transition: filter .2s ease-in-out;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}

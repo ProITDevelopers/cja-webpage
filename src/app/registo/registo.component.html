@@ -1,188 +1,233 @@
  <app-header></app-header>
-<div class="background-image pt-5 px-1 "  style="background-image:url('assets/images/JovensMais Shoot-9.jpg');">
-  <!-- <a class="navbar-brand" [routerLink]="['/inicio']"><img src="assets/cja3.png" alt="logo"  class="d-inline-block align-top" height="170"></a> -->
-  <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 p-4" id="form">
-      
-      <h2 class="text-center my-3">Registo de cartão jovem Angola</h2>
-      <form (ngSubmit)="cadastrarMembro(membroF)" #membroF="ngForm" novalidate >
-        <div class="form-group row"> 
-          <div class="col-sm-6" >
-            <label class=" col-form-label">Nome próprio<span >*</span></label>
-            <div  [class.has-success]="nome.valid && ( nome.dirty || nome.touched)" [class.has-danger]="!nome.valid && ( nome.dirty || nome.touched)"> 
-              <div class="input-group ">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
-                </div>
-                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu nome" required name="nome" [(ngModel)]="membro.nomeProprio" pattern="[A-Za-zÀ-ú ']{3,}" #nome="ngModel" autocomplete="off">
-              </div>
-              <div class="mt-1" *ngIf="!nome.valid && ( nome.dirty || nome.touched)" >
-                <span *ngIf="nome.errors.required" class="form-text">*Campo obrigatório.</span>
-                <span *ngIf="nome.errors.pattern" class="form-text">Formato inválido. Deve ter apenas letras.</span>
-              </div>
-            </div> 
-          </div>
-          <div class="col-sm-6">
-            <label class=" col-form-label">Apelido<span >*</span></label>
-            <div  [class.has-success]="apelido.valid && ( apelido.dirty || apelido.touched)" [class.has-danger]="!apelido.valid && ( apelido.dirty || apelido.touched)"> 
-              <div class="input-group ">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
-                </div>
-                <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu apelido" required name="apelido" [(ngModel)]="membro.apelido" pattern="[A-Za-zÀ-ú ']{3,}" #apelido="ngModel" autocomplete="off">
-              </div>
-              <div class="mt-1" *ngIf="!apelido.valid && ( apelido.dirty || apelido.touched)" >
-                  <span *ngIf="apelido.errors.required" class="form-text">*Campo obrigatório.</span>
-                  <span *ngIf="apelido.errors.pattern" class="form-text">Formato inválido. Deve ter apenas letras.</span></div>
-            </div> 
-          </div>
-        </div> 
-        <div class="form-group row">
-          <div class="col-sm-6" >
-            <label class=" col-form-label">Data de nascimento<span >*</span></label>  
-            <div class="input-group">
-              <input type="text" id="dtn" name="dtnasc" class="form-control form-control-sm" [(ngModel)]="dataNascimento" placeholder="Data de nascimento" #dp="bsDatepicker"
-             bsDatepicker [minDate]="minDate" [maxDate]="maxDate" [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY',containerClass:'theme-blue' }" required readonly>
-              <div class="input-group-prepend"> 
-                <span class="input-group-text" id="basic-addon" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen">
-                <i class="fa fa-calendar"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <label class="col-form-label">Bilhete de identidade<span >*</span></label>
-            <div [class.has-success]="bi.valid && ( bi.dirty || bi.touched)" [class.has-danger]="!bi.valid && ( bi.dirty || bi.touched)">  
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="sizing-addon1"><i class="fa fa-file-text"></i></span>
-                </div>
-                <input type="text" class="form-control form-control-sm" placeholder="123456789az001" required maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel" pattern="^[0-9]{9}[a-z]{2}[0-9]{3}" autocomplete="off">
-              </div>
-              <div class="mt-1" *ngIf="!bi.valid && ( bi.dirty || bi.touched)" >
-                <span *ngIf="bi.errors.required" class="form-text">*Campo obrigatório.</span>
-                <span *ngIf="bi.errors.minlength" class="form-text">Deve ter 14 caracteres</span>
-                <span *ngIf="bi.errors.pattern" class="form-text">Número do bilhete de identidade inválido. Deve ser 123456789az001.</span>
-              </div>
-            </div>
-            <span class="mensagem" *ngIf="dados?.bi">{{dados.bi}}</span>
-          </div>
-        </div>
-        <div class="form-group row">  
-          <div class="col-sm-6">
-            <label class="col-form-label">E-mail (Opcional)</label>
-            <div  [class.has-success]="email.valid && ( email.dirty || email.touched)" [class.has-danger]="!email.valid && ( email.dirty || email.touched)">  
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="sizing-addon1"><i class="fa fa-envelope"></i></span>
-                </div>
-                <input type="email" class="form-control form-control-sm" placeholder="email@email.com" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" [(ngModel)]="membro.email" #email="ngModel" autocomplete="off">
-              </div>
-              <div class="mt-1" *ngIf="!email.valid && (email.dirty || email.touched)" >
-                <!-- <span *ngIf="email.errors.required" class="form-text">*Campo obrigatório.</span> -->
-                <span *ngIf="email.errors.pattern" class="form-text">Email inválido</span>
-              </div> 
-            </div>
-            <span class="mensagem" *ngIf="dados?.email">{{dados.email}}</span>
-          </div> <!---->
-          <div class="col-sm-6">
-            <label class="col-form-label">Nº Telemóvel<span >*</span></label>
-            <div [class.has-success]="telefone.valid && (telefone.dirty || telefone.touched)" [class.has-danger]="!telefone.valid && (telefone.dirty || telefone.touched)">  
-              <div class="input-group">
-                <div class="input-group-prepend"> 
-                  <span class="input-group-text" id="sizing-addon1"><i class="fa fa-phone"></i></span>
-                </div>
-                <input type="text" class="form-control form-control-sm" placeholder="Nº de telefone" required  name="telefone" minlength="9" maxlength="9" [(ngModel)]="membro.telemovel" #telefone="ngModel" autocomplete="off" pattern="^[0-9]*$">
-              </div>
-              <div class="mt-1" *ngIf="!telefone.valid && (telefone.dirty || telefone.touched)">
-                <span *ngIf="telefone.errors.required" class="form-text">*Campo obrigatório. </span>
-                <span *ngIf="telefone.errors.minlength" class="form-text">Deve ter no mínimo 9 dígitos</span>
-                <span *ngIf="telefone.errors.pattern" class="form-text">Formato inválido</span>
-              </div>
-            </div>
-            <span class="mensagem" *ngIf="dados?.telemovel">{{dados.telemovel}}</span>
-          </div>
-        </div>
-        <!-- <div class="form-group row"> 
-          <div class="col-sm-6">
-            <label class="col-form-label">Rua<span >*</span></label>
-            <div  [class.has-success]="rua.valid && ( rua.dirty || rua.touched)" [class.has-danger]="!rua.valid && ( rua.dirty || rua.touched)"> 
-              <input type="text" class="form-control form-control-sm" placeholder="Escreva a rua" required name="rua" [(ngModel)]="membro.rua" #rua="ngModel" autocomplete="off">
-              <div class="mt-1" *ngIf="!rua.valid && ( rua.dirty || rua.touched)" ><span class="form-text">*Campo obrigatório</span></div>
-            </div> 
-          </div>
-          <div class="col-sm-6">
-            <label class="col-form-label">Cidade<span >*</span></label>
-            <div  [class.has-success]="cidade.valid && ( cidade.dirty || cidade.touched)" [class.has-danger]="!cidade.valid && ( cidade.dirty || cidade.touched)"> 
-              <input type="text" class="form-control form-control-sm" placeholder="Escreva a cidade" required name="cidade" [(ngModel)]="membro.cidade" #cidade="ngModel" autocomplete="off">
-              <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)"><span class="form-text">*Campo obrigatório</span></div>
-            </div>
-          </div>
-        </div>  -->
-        <div class="form-group row"><!--Inicio div row--> 
-          <div class="col-sm-6"><!--Inicio div cidade-->
-            <label class="col-form-label" for="cidade1">Cidade<span >*</span></label>
-            <div  [class.has-success]="cidade.valid && ( cidade.dirty || cidade.touched)" [class.has-danger]="!cidade.valid && ( cidade.dirty || cidade.touched)">
-              <select class="form-control" name="cidade" id="cidade1" [(ngModel)]="membro.cidade" (change)="onSelect($event.target.value)" #cidade="ngModel" required>
-                  <option *ngIf="cidades==null" value="">--Escolha a cidade--</option>  
-                    <option *ngFor=" let cidade of cidades | async" [value]="cidade.provincia">{{cidade.provincia}}</option> 
-              </select>
-              <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)">
-                <span *ngIf="cidade.errors.required" class="form-text">*Campo obrigatório.</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6"><!-- Inicio div municipio -->
-            <label class="col-form-label" for="municipio1">Município<span >*</span></label>
-            <div  [class.has-success]="municipio.valid && ( municipio.dirty || municipio.touched)" [class.has-danger]="!municipio.valid && ( municipio.dirty || municipio.touched)">
-              <select class="form-control" name="municipio" id="municipio1" [(ngModel)]="membro.municipio" #municipio="ngModel" required>
-                <option *ngIf="municipios == null" value="">--Escolha o município--</option><!--*ngIf="(municipios | async)?.length == 0"-->
-                    <option *ngFor=" let municipio1 of municipios | async" [value]="municipio1.municipio">  {{municipio1.municipio}}
-                    </option>
-              </select>
-              <div class="mt-1" *ngIf="!municipio.valid && ( municipio.dirty || municipio.touched)">
-                <span *ngIf="municipio.errors.required" class="form-text">*Campo obrigatório.</span>
-              </div>
-            </div> 
-          </div><!--fim div municipio-->
-        </div><!--fim div row--> 
-        <div class="from-group row">
-          <div class="col-sm-5" >
-            <label class="col-form-label">Gênero<span >*</span></label>
-            <div >
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios1" value="masculino" checked [(ngModel)]="membro.genero" #genero="ngModel" required>
-                <label class="form-check-label" for="exampleRadios1">Masculino</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero1" id="exampleRadios2" value="feminino" [(ngModel)]="membro.genero" #genero="ngModel" required>
-                <label class="form-check-label" for="exampleRadios2">Feminino</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-7">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Fotografia<span style="color: red">*</span></label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1" #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" required>
-            </div>
-          </div>
-        </div>
-        <div class="form-group form-check mt-2">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="termo" (change)="termo= !termo">
-          <label class="form-check-label" for="exampleCheck1">Concordo com a <a href="assets/doc/Política de Privacidade CJA.pdf" target="_blank" rel="noopener">Política de Privacidade</a> e os <a href="assets/doc/REGULAMENTO - CJA.pdf" target="_blank" rel="noopener">Termos e condições</a></label>
-        </div>
-        
-        <div class="form-group row">
-          <div class="col-sm-9">
-             <button type="submit" id="myButton" name="btnRegisto" class="btn btn-default mr-1" [disabled]="!membroF.form.valid || !termo || !imageInput.value"> Registrar </button>
+ <div class="background-image pt-5 px-1 " style="background-image:url('assets/images/JovensMais Shoot-9.jpg');">
+   <!-- <a class="navbar-brand" [routerLink]="['/inicio']"><img src="assets/cja3.png" alt="logo"  class="d-inline-block align-top" height="170"></a> -->
+   <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 p-4" id="form">
 
-            <button type="button" name="btnRepor" class="btn btn-outline-secondary" (click)="clean(membroF)"> Repor </button>
-          </div>
-        </div>
-        <div class="alert alert-success" role="alert" *ngIf="mensagem">
-          <i class="fa fa-check "></i> {{mensagem}}
-        </div>
-        <!-- <span style="color: red" *ngIf="dados">{{mensagem}}</span> -->
-      </form>
-  </div>
-</div> 
-<app-footer></app-footer>   
+     <h2 class="text-center my-3">Emissão Online do Cartão Jovem Angola</h2>
+
+     <marquee scrollDelay=150>
+       <p class="font-weight-light" style="color: red">
+         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i> Atenção! A fotografia
+         utilizada para a adesão deve ser em tamanho tipo passe, com o rosto bem visível e tirada em fundo branco.
+
+         Caso uses óculos, pedimos atenção para que a foto não tenha reflexo do flash ou do ecrã do telemóvel nas
+         lentes, sendo que não é permitido o uso de óculos escuros.
+       </p>
+     </marquee>
+
+     <form (ngSubmit)="cadastrarMembro(membroF)" #membroF="ngForm" novalidate>
+       <div class="form-group row">
+         <div class="col-sm-6">
+           <label class=" col-form-label">Nome próprio<span>*</span></label>
+           <div [class.has-success]="nome.valid && ( nome.dirty || nome.touched)"
+             [class.has-danger]="!nome.valid && ( nome.dirty || nome.touched)">
+             <div class="input-group ">
+               <div class="input-group-prepend">
+                 <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
+               </div>
+               <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu nome" required
+                 name="nome" [(ngModel)]="membro.nomeProprio" pattern="[A-Za-zÀ-ú '-]{3,}" #nome="ngModel"
+                 autocomplete="off">
+             </div>
+             <div class="mt-1" *ngIf="!nome.valid && ( nome.dirty || nome.touched)">
+               <span *ngIf="nome?.errors.required" class="form-text">*Campo obrigatório.</span>
+               <span *ngIf="nome?.errors.pattern" class="form-text">Formato inválido. Deve ter apenas letras.</span>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <label class=" col-form-label">Apelido<span>*</span></label>
+           <div [class.has-success]="apelido.valid && ( apelido.dirty || apelido.touched)"
+             [class.has-danger]="!apelido.valid && ( apelido.dirty || apelido.touched)">
+             <div class="input-group ">
+               <div class="input-group-prepend">
+                 <span class="input-group-text" id="sizing-addon1"><i class="fa fa-user"></i></span>
+               </div>
+               <input type="text" class="form-control form-control-sm" placeholder="Escreva o seu apelido" required
+                 name="apelido" [(ngModel)]="membro.apelido" pattern="[A-Za-zÀ-ú '-]{3,}" #apelido="ngModel"
+                 autocomplete="off">
+             </div>
+             <div class="mt-1" *ngIf="!apelido.valid && ( apelido.dirty || apelido.touched)">
+               <span *ngIf="apelido?.errors.required" class="form-text">*Campo obrigatório.</span>
+               <span *ngIf="apelido?.errors.pattern" class="form-text">Formato inválido. Deve ter apenas letras.</span>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="form-group row">
+         <div class="col-sm-6">
+           <label class=" col-form-label">Data de nascimento<span>*</span></label>
+           <div class="input-group">
+             <input type="text" id="dtn" name="dtnasc" class="form-control form-control-sm" [(ngModel)]="dataNascimento"
+               placeholder="Data de nascimento" #dp="bsDatepicker" bsDatepicker [minDate]="minDate" [maxDate]="maxDate"
+               [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY',containerClass:'theme-blue' }" required readonly>
+             <div class="input-group-prepend">
+               <span class="input-group-text" id="basic-addon" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen">
+                 <i class="fa fa-calendar"></i>
+               </span>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <label class="col-form-label">Bilhete de identidade<span>*</span></label>
+           <div [class.has-success]="bi.valid && ( bi.dirty || bi.touched)"
+             [class.has-danger]="!bi.valid && ( bi.dirty || bi.touched)">
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text" id="sizing-addon1"><i class="fa fa-file-text"></i></span>
+               </div>
+               <input type="text" class="form-control form-control-sm" placeholder="123456789az001" required
+                 maxlength="14" minlength="14" name="bi" [(ngModel)]="membro.bi" #bi="ngModel"
+                 pattern="^[0-9]{9}[A-Z a-z]{2}[0-9]{3}" autocomplete="off">
+             </div>
+             <div class="mt-1" *ngIf="!bi.valid && ( bi.dirty || bi.touched)">
+               <span *ngIf="bi?.errors.required" class="form-text">*Campo obrigatório.</span>
+               <span *ngIf="bi?.errors.minlength" class="form-text">Deve ter 14 caracteres</span>
+               <span *ngIf="bi?.errors.pattern" class="form-text">Número do bilhete de identidade inválido. Deve ser
+                 123456789az001.</span>
+             </div>
+           </div>
+           <span class="mensagem" *ngIf="dados?.bi">{{dados.bi}}</span>
+         </div>
+       </div>
+       <div class="form-group row">
+         <div class="col-sm-6">
+           <label class="col-form-label">E-mail (Opcional)</label>
+           <div [class.has-success]="email.valid && ( email.dirty || email.touched)"
+             [class.has-danger]="!email.valid && ( email.dirty || email.touched)">
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text" id="sizing-addon1"><i class="fa fa-envelope"></i></span>
+               </div>
+               <input type="email" class="form-control form-control-sm" placeholder="email@email.com"
+                 pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" [(ngModel)]="membro.email"
+                 #email="ngModel" autocomplete="off">
+             </div>
+             <div class="mt-1" *ngIf="!email.valid && (email.dirty || email.touched)">
+               <!-- <span *ngIf="email.errors.required" class="form-text">*Campo obrigatório.</span> -->
+               <span *ngIf="email?.errors.pattern" class="form-text">Email inválido</span>
+             </div>
+           </div>
+           <span class="mensagem" *ngIf="dados?.email">{{dados.email}}</span>
+         </div>
+         <!---->
+         <div class="col-sm-6">
+           <label class="col-form-label">Nº Telemóvel<span>*</span></label>
+           <div [class.has-success]="telefone.valid && (telefone.dirty || telefone.touched)"
+             [class.has-danger]="!telefone.valid && (telefone.dirty || telefone.touched)">
+             <div class="input-group">
+               <div class="input-group-prepend">
+                 <span class="input-group-text" id="sizing-addon1"><i class="fa fa-phone"></i></span>
+               </div>
+               <input type="text" class="form-control form-control-sm" placeholder="Nº de telefone" required
+                 name="telefone" minlength="9" maxlength="9" [(ngModel)]="membro.telemovel" #telefone="ngModel"
+                 autocomplete="off" pattern="^[0-9]*$">
+             </div>
+             <div class="mt-1" *ngIf="!telefone.valid && (telefone.dirty || telefone.touched)">
+               <span *ngIf="telefone?.errors.required" class="form-text">*Campo obrigatório. </span>
+               <span *ngIf="telefone?.errors.minlength" class="form-text">Deve ter no mínimo 9 dígitos</span>
+               <span *ngIf="telefone?.errors.pattern" class="form-text">Formato inválido</span>
+             </div>
+           </div>
+           <span class="mensagem" *ngIf="dados?.telemovel">{{dados.telemovel}}</span>
+         </div>
+       </div>
+
+       <div class="form-group row">
+         <!--Inicio div row-->
+         <div class="col-sm-6">
+           <!--Inicio div cidade-->
+           <label class="col-form-label" for="cidade1">Cidade<span>*</span></label>
+           <div [class.has-success]="cidade.valid && ( cidade.dirty || cidade.touched)"
+             [class.has-danger]="!cidade.valid && ( cidade.dirty || cidade.touched)">
+             <select class="form-control" name="provincia" id="cidade1" [(ngModel)]="membro.provincia"
+               (change)="onSelect($event.target.value)" #cidade="ngModel" required>
+               <option *ngIf="cidades==null" value="">--Escolha a cidade--</option>
+               <option *ngFor=" let cidade of cidades | async" [value]="cidade.provincia">{{cidade.provincia}}</option>
+             </select>
+             <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)">
+               <span *ngIf="cidade?.errors.required" class="form-text">*Campo obrigatório.</span>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <!-- Inicio div municipio -->
+           <label class="col-form-label" for="municipio1">Município<span>*</span></label>
+           <div [class.has-success]="municipio.valid && ( municipio.dirty || municipio.touched)"
+             [class.has-danger]="!municipio.valid && ( municipio.dirty || municipio.touched)">
+             <select class="form-control" name="municipio" id="municipio1" [(ngModel)]="membro.municipio"
+               #municipio="ngModel" required>
+               <option *ngIf="municipios == null" value="">--Escolha o município--</option>
+               <!--*ngIf="(municipios | async)?.length == 0"-->
+               <option *ngFor=" let municipio1 of municipios | async" [value]="municipio1.municipio">
+                 {{municipio1.municipio}}
+               </option>
+             </select>
+             <div class="mt-1" *ngIf="!municipio.valid && ( municipio.dirty || municipio.touched)">
+               <span *ngIf="municipio?.errors.required" class="form-text">*Campo obrigatório.</span>
+             </div>
+           </div>
+         </div>
+         <!--fim div municipio-->
+       </div>
+       <!--fim div row-->
+       <div class="from-group row">
+         <div class="col-sm">
+           <label class="col-form-label">Gênero<span>*</span></label>
+           <div>
+             <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" name="genero1" id="exampleRadios1" value="masculino" checked
+                 [(ngModel)]="membro.genero" #genero="ngModel" required>
+               <label class="form-check-label" for="exampleRadios1">Masculino</label>
+             </div>
+             <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" name="genero1" id="exampleRadios2" value="feminino"
+                 [(ngModel)]="membro.genero" #genero="ngModel" required>
+               <label class="form-check-label" for="exampleRadios2">Feminino</label>
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <div class="form-group">
+             <label for="exampleFormControlFile1">Fotografia<span style="color: red">*</span></label>
+             <input type="file" class="form-control-file" id="exampleFormControlFile1" #imageInput type="file"
+               accept="image/*" (change)="processFile(imageInput)" required>
+           </div>
+         </div>
+       </div>
+       <div class="form-group form-check mt-2">
+         <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="termo" (change)="termo= !termo">
+         <label class="form-check-label" for="exampleCheck1">Concordo com a <a
+             href="assets/doc/Politica de Privacidade CJA.pdf" target="_blank" rel="noopener">Política de
+             Privacidade</a> e os <a href="assets/doc/REGULAMENTO - CJA.pdf" target="_blank" rel="noopener">Termos e
+             condições</a></label>
+       </div>
+
+       <div class="form-group row">
+         <div class="col-sm-12">
+           <h6 class="text-justify text-mutted"><i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+             Atenção! A fotografia
+             utilizada para a adesão deve ser em tamanho tipo passe, com o rosto bem visível e tirada em fundo branco.
+
+             Caso uses óculos, pedimos atenção para que a foto não tenha reflexo do flash ou do ecrã do telemóvel nas
+             lentes, sendo que não é permitido o uso de óculos escuros.</h6>
+         </div>
+       </div>
+       <div class="form-group row">
+         <div class="col-sm-6">
+           <button type="submit" id="myButton" name="btnRegisto" class="btn btn-default mr-1"
+             [disabled]="!membroF.form.valid || !termo || !imageInput.value"> Registrar </button>
+
+           <button type="button" name="btnRepor" class="btn btn-outline-secondary" (click)="clean(membroF)"> Repor
+           </button>
+         </div>
+       </div>
+
+       <div class="alert alert-success" role="alert" *ngIf="mensagem">
+         <i class="fa fa-check "></i> {{mensagem}}
+       </div>
+       <!-- <span style="color: red" *ngIf="dados">{{mensagem}}</span> -->
+     </form>
+   </div>
+ </div>
+ <app-footer></app-footer>

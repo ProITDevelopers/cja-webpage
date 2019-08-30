@@ -1,7 +1,7 @@
 export class Mensagem {
-	nome:string;
-	email:string;
-	mensagem:string;
+  nome: string;
+  email: string;
+  assunto: string;
 
-	constructor(){}
+  constructor() {}
 }
