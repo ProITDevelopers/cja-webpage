@@ -30,7 +30,7 @@ export class SegViaComponent implements OnInit {
         Validators.required,
         /* Validators.maxLength(9), */
         Validators.minLength(9),
-        Validators.pattern('[9]{1}[1-9]{2}[0-9]{6}')
+        Validators.pattern('[9]{1}[0-9]{1}[0-9]{7}')
       ]]
     });
   }
@@ -52,9 +52,13 @@ export class SegViaComponent implements OnInit {
             this.mensagem = null;
             this.mensagem2 = null;
             this.clique = false;
+            setTimeout(() => {
+              this.dadosRef = null;
+            }, 4000);
           }
         },
         erroConsulta => {
+          this.dadosRef = null;
           this.mensagem = erroConsulta.error;
           this.mensagem2 = null;
           this.clique = false;

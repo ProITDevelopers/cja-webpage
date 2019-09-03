@@ -34,6 +34,7 @@ export class RegistoComponent implements OnInit {
   dados;
   dados1;
   mensagem: string;
+  msgErro;
   selectedFile: ImageSnippet;
   file: File;
   file1 = false;
@@ -91,6 +92,8 @@ export class RegistoComponent implements OnInit {
           this.changeTextButton(false, 'Registrar');
           this.dados = error.error.erro;
           this.mensagem = '';
+          this.msgErro =  error.error.erro;
+          setTimeout(() => this.msgErro = null, 6000);
         }
       );
   }

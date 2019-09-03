@@ -143,7 +143,7 @@
              <select class="form-control" name="provincia" id="cidade1" [(ngModel)]="membro.provincia"
                (change)="onSelect($event.target.value)" #cidade="ngModel" required>
                <option *ngIf="cidades==null" value="">--Escolha a cidade--</option>
-               <option *ngFor=" let cidade of cidades | async" [value]="cidade.provincia">{{cidade.provincia}}</option>
+               <option *ngFor="let cidade of cidades | async" [value]="cidade.provincia">{{cidade.provincia}}</option>
              </select>
              <div class="mt-1" *ngIf="!cidade.valid && ( cidade.dirty || cidade.touched)">
                <span *ngIf="cidade?.errors.required" class="form-text">*Campo obrigatório.</span>
@@ -224,8 +224,11 @@
        </div>
 
        <div class="alert alert-success" role="alert" *ngIf="mensagem">
-         <i class="fa fa-check "></i> {{mensagem}}
+         <i class="fa fa-check" aria-hidden="true"></i> {{mensagem}}
        </div>
+       <div class="alert alert-danger" role="alert" *ngIf="msgErro">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{msgErro}}
+      </div>
        <!-- <span style="color: red" *ngIf="dados">{{mensagem}}</span> -->
      </form>
    </div>
