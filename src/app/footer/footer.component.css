@@ -1,4 +1,4 @@
-.row1 a{
+.coloracao a{
 	color: white;
 	text-decoration:none;
 }
@@ -6,7 +6,7 @@
 	color: white;
 	background-color: #dc0461;
 }
-.row1 a,h6{
+.coloracao a,h6{
 	font-size: 12px;
 }
 .btn-default{
@@ -14,16 +14,17 @@
 	background-color: #dc0461;
 	border-color: #dc0461;
 }
-.row1 p{
+.coloracao p{
 	color: white;
 }
-.row1 p span>i{
+.coloracao p span>i{
 	color: #dc0461;
 	margin-right: 5px;
 	margin-bottom: 10px;
 	font-size: 24px;
 }
 .proit {
-	color: white;
-	/*font-size: 16px;*/
+  color: white;
+  text-transform: uppercase;
+	font-size: 12px;
 }

@@ -1,76 +1,87 @@
 <section id="footer1" style="background-color: black;">
-    <footer>
-        <div class="container py-4">
-            <div class="row row1">
-                <div class="col-md-8 col-sm-12 mb-5">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4 mb-4">
-                            <a class="font-weight-bold text-uppercase title-small px-3 py-1">Informação</a>
-                            <ul class="nav flex-column">
-                              <li class="nav-item">
-                                <a class="nav-link text-uppercase" [routerLink]="['/comunidade-jovem']">Comunidade Jovem</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link text-uppercase" [routerLink]="['/perguntas-frequentes']">Perguntas Frequentes</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link text-uppercase" [routerLink]="['/regulamento']">Regulamento</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link text-uppercase" [routerLink]="['/sobre-nos']">Sobre nós</a>
-                              </li>
-                            </ul>
-                        </div>
-                        <!-- <div class="col-md-3 col-sm-4">
-                            <a class="font-weight-bold text-uppercase title-small px-3 py-1">Vantagens</a>
-                            <ul class="nav flex-column">
-                              <li class="nav-item">
-                                <a class="nav-link text-uppercase" href="#">Promocionais</a>
-                              </li>
-                            </ul>
-                        </div> -->
-                        <div class="col-md-4 col-sm-4 mb-4">
-                            <a class="font-weight-bold text-uppercase title-small px-3 py-1" [routerLink]="['/registo-cartao']">Emissão online</a>
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" [routerLink]="['/segunda-via']">REFERÊNCIA</a>
-                                </li>
-                            </ul><!---->
-                        </div>
-                        <div class="col-md-4 col-sm-4 mb-4">
-                        	<p >
-                        		<span><i class="fa fa-phone"></i> 923 190 050</span><br>
-                        		<span><i class="fa fa-envelope"></i> geral@cartaojovem.co.ao</span><br>
-                        		<span><i class="fa fa-map-marker"></i> Rua Kwame Nkrumah , Edifício  Impor África, Maianga - Luanda</span>
-                        	</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <form (ngSubmit)="enviarMensagem(mensagemF)" #mensagemF="ngForm" novalidate >
-                        <div class="form-group">
-                            <label for="nome" class="sr-only">Nome</label>
-                            <input type="email" class="form-control" id="nome" name="nome1" placeholder="Nome" [(ngModel)]="mensagem.nome" #nomeI="ngModel" autocomplete="off" required>
-                          </div>
-                          <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" class="form-control" id="email" name="email1" placeholder="email@example.com" [(ngModel)]="mensagem.email" #emailI="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" autocomplete="off" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="mensagem" class="sr-only">Mensagem</label>
-                            <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem" name="mensagem1" [(ngModel)]="mensagem.assunto" #mensagemI="ngModel" autocomplete="off" required></textarea>
-                        </div>
-                        <div class="ml-auto">
-                            <button type="submit" name="btnEnviar" id="enviar" class="btn btn-default" [disabled]="!mensagemF.form.valid">Enviar</button>
-                        </div>
-                    </form>
-                </div>
+  <footer>
+    <div class="container py-4">
+      <div class="row coloracao">
+        <div class="col">
+          <div class="row text-center">
+            <div class="col-md-4 col-sm-4 my-1">
+              <a class="font-weight-bold text-uppercase title-small px-3 py-1">Informação</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" [routerLink]="['/comunidade-jovem']">Comunidade Jovem</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" [routerLink]="['/perguntas-frequentes']">Perguntas Frequentes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" [routerLink]="['/regulamento']">Regulamento</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" [routerLink]="['/sobre-nos']">Sobre nós</a>
+                </li>
+              </ul>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <span class="proit">Powered by <a href="http://proit-consulting.co.ao/" target="_blank" rel="noreferrer"> Proit-consulting</a> &copy; 2019</span>
-                </div>
+
+            <div class="col-md-4 col-sm-4 my-1">
+              <a class="font-weight-bold text-uppercase title-small px-3 py-1"
+                [routerLink]="['/registo-cartao']">Emissão online</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="#" class="nav-link" [routerLink]="['/segunda-via']">REFERÊNCIA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" target="_blank"
+                    href="https://play.google.com/store/apps/details?id=cjacartaojovem.com.cjacartaojovem&hl=pt">
+                    <img src="assets/images/playok.png" class="w-50" alt="Disponivel na Google Play"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-uppercase" href="#">
+                    <img src="assets/images/appstoreok.png" class="w-50 my-1" alt="Disponivel na AppStore"></a>
+                </li>
+              </ul>
             </div>
+
+            <div class="col-md-4 col-sm-4 my-1">
+              <p>
+                <span><i class="fa fa-phone"></i> 923 190 050</span><br>
+                <span><i class="fa fa-envelope"></i> geral@cartaojovem.co.ao</span><br>
+                <span><i class="fa fa-map-marker"></i> Rua Kwame Nkrumah , Edifício Impor África, Maianga -
+                  Luanda</span>
+              </p>
+            </div>
+          </div>
         </div>
-    </footer>
+        <div class="col-md-4 col-sm-12">
+          <form (ngSubmit)="enviarMensagem(mensagemF)" #mensagemF="ngForm" novalidate>
+            <div class="form-group">
+              <label for="nome" class="sr-only">Nome</label>
+              <input type="email" class="form-control" id="nome" name="nome1" placeholder="Nome"
+                [(ngModel)]="mensagem.nome" #nomeI="ngModel" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" class="form-control" id="email" name="email1" placeholder="email@example.com"
+                [(ngModel)]="mensagem.email" #emailI="ngModel"
+                pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+/.[a-zA-Z0-9-.]+$" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="mensagem" class="sr-only">Mensagem</label>
+              <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem" name="mensagem1"
+                [(ngModel)]="mensagem.assunto" #mensagemI="ngModel" autocomplete="off" required></textarea>
+            </div>
+            <div class="ml-auto">
+              <button type="submit" name="btnEnviar" id="enviar" class="btn btn-default"
+                [disabled]="!mensagemF.form.valid">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <span class="proit">Powered by <a href="http://proit-consulting.co.ao/" target="_blank" rel="noreferrer">
+              Proit-consulting</a> &copy; 2019</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 </section>
