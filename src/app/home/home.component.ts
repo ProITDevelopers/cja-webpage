@@ -137,11 +137,6 @@ export class HomeComponent implements OnInit {
       site: 'https://www.ncrangola.com'
     },
     {
-      entidade: 'CocaCola',
-      url: 'assets/logos/Coca-Cola-Logo-PNG-768x361.png',
-      site: '#'
-    },
-    {
       entidade: 'Banco Keve',
       url: 'assets/logos/Logotipo com Assinatura  Keve-01.png',
       site: 'https://www.bancokeve.ao'

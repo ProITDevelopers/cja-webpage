@@ -8,12 +8,12 @@ import { ServicoService } from '../servicos/servico.service';
 })
 export class ParceirosComponent implements OnInit {
 
-  parceiros;
   pagina: number;
-  constructor(private servicos: ServicoService) { }
+  constructor(private servicos: ServicoService) {}
 
   infoParceiros: any;
-  todosParceiros = [
+  todosParceiros;
+  /* todosParceiros = [
     {
       entidade: 'zap cinema',
       url: 'assets/logos/LOGO-ZAP-CINEMAS.png',
@@ -159,17 +159,15 @@ export class ParceirosComponent implements OnInit {
       url: 'assets/logos/Green touch logo-01.png',
       site: '#'
     }
-  ];
-
+  ]; */
 
   ngOnInit() {
-    /* this.pagina = 1;
+    /* this.pagina = 1; */
     this.servicos.todosParceiros().subscribe(
       resData => {
-        this.parceiros = resData;
-      }, errData => {
-      }
-    ); */
+        this.todosParceiros = resData;
+      },
+      errData => {}
+    );
   }
-
 }
