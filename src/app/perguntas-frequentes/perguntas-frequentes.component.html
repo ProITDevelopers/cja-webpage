@@ -1,27 +1,195 @@
 <app-header></app-header>
 <section id="perguntas">
-	<div class="container mb-5">
-		<div class="row justify-content-center">
-			<h3 class="font-alt font-w-700 letter-spacing-2 m-4 text-uppercase title-small">Perguntas frequentes</h3>
-		</div>
-		
-		<div class="accordion" id="accordionExample1" >
-			<div class="card " *ngFor=" let pergunta of perguntas; let i= index ">
-			    <div class="card-header" [id]="'pergunta'+i">
-			      <h2 class="mb-0">
-			        <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
-			          {{pergunta.pergunta}}
-			        </button>
-			      </h2>
-			    </div>
-			    <div [id]="'collapseOne'+i" [ngClass]=" i == 0 ? ' collapse show' : 'collapse'" [attr.aria-labelledby]="'pergunta'+i" data-parent="#accordionExample1">
-			      <div class="card-body">
-			      	<p class="card-text">{{pergunta.resposta}}</p>
-			        <p class="card-text" *ngIf="pergunta.resposta1">{{pergunta.resposta1}}</p>
-			      </div>
-			    </div>
-			</div>
-		</div>
-	</div>
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <h3 class="font-alt font-w-700 letter-spacing-2 m-4 text-uppercase title-small">Perguntas frequentes</h3>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="pergunta1">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#resposta1"
+              aria-expanded="true" aria-controls="resposta1">
+              O que é o Cartão Jovem Angola?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta1" class="collapse show" aria-labelledby="pergunta1" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">O Cartão Jovem Angola é um cartão que concede descontos a jovens de idades
+              compreendidas entre <strong class="text-uppercase">os 15 e os 35 anos</strong> em Angola. Os descontos aplicam-se a uma gama
+              variada de serviços e eventos, desde cinemas e farmácias a mercados e restaurantes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta2">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta2"
+              aria-expanded="true" aria-controls="resposta2">
+              Todos podem tem um Cartão Jovem Angola?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta2" class="collapse" aria-labelledby="pergunta2" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">O Cartão Jovem Angola é destinado a adolescentes e jovens adultos <strong class="text-uppercase">dos 15 aos 35
+                anos</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta3">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta3"
+              aria-expanded="true" aria-controls="resposta3">
+              Quanto custa?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta3" class="collapse" aria-labelledby="pergunta3" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">O Cartão Jovem Angola tem uma anuidade de <strong class="text-uppercase">2.500 akz</strong>. Durante este ano
+              podes usar o teu Cartão Jovem Angola quantas vezes quiseres, nas lojas dos nossos parceiros.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta4">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta4"
+              aria-expanded="true" aria-controls="resposta4">
+              Onde pode ser solicitado?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta4" class="collapse" aria-labelledby="pergunta4" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">O Cartão Jovem Angola pode ser solicitado <a
+                [routerLink]="['/registo-cartao']"><strong class="text-uppercase">online</strong></a> ou em qualquer um dos nossos Postos de
+              Adesão fixos ou móveis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta5">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta5"
+              aria-expanded="true" aria-controls="resposta5">
+              Após a adesão online, como faço o pagamento da anuidade?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta5" class="collapse" aria-labelledby="pergunta5" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">Após a adesão online, irás receber uma SMS do CJA com a indicação da Entidade
+              <strong class="text-uppercase">00358</strong> (Cartão Jovem) e a Referência, para efectuares o pagamento da anuidade, no valor de
+              <strong class="text-uppercase">2.500 Akz</strong>. Deves dirigir-te ao Multicaixa e fazer o pagamento seguindo os seguintes
+              passos:</p>
+            <ol>
+              <li>Inserir o teu cartão multicaixa e o teu Pin</li>
+              <li>Seleccionar a opção <strong class="text-uppercase"> “PAGAMENTOS”</strong></li>
+              <li>Seleccionar a opção <strong class="text-uppercase">“PAGAMENTOS POR REFERÊNCIA”</strong></li>
+              <li>Inserir o código da Entidade – <strong class="text-uppercase">00358</strong></li>
+              <li>Na página <strong class="text-uppercase">“CARTÃO JOVEM PAGAMENTO”</strong>, deves inserir o número da Referência que
+                recebeste por SMS</li>
+              <li>Confirmar na tecla verde</li>
+              <li>Seleccionar a opção <strong class="text-uppercase">“CARTÃO JOVEM 2.500, 00 24/7"</strong></li>
+              <li>Confirmar os dados e seleccionar a opção <strong class="text-uppercase">“PAGAR FACTURA”</strong></li>
+              <li>O Multicaixa irá imprimir o comprovativo de pagamento, que deves guardar e apresentar quando fores
+                levantar o teu Cartão Jovem Angola</li>
+            </ol>
+            <p class="card-text">Lembrando que o pagamento deve ser feito até 48h após teres recebido a SMS, após esse
+              período a referência irá expirar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta6">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta6"
+              aria-expanded="true" aria-controls="resposta6">
+              Se a minha referência expirar, como fazer para o recuperar?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta6" class="collapse" aria-labelledby="pergunta6" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">Se passarem as 48h e não fizeres o pagamento, a referência irá expirar. Para a
+              recuperares <a [routerLink]="['/segunda-via']"><strong class="text-uppercase">click aqui</strong></a> e insere o número de
+              telemóvel que
+              utilizaste na adesão online. Irás receber nova SMS com os dados para pagamento da tua anuidade. Consulta a
+              pergunta <strong class="text-uppercase">“Após a adesão online, como faço o pagamento da anuidade?”</strong> para saberes os
+              passos para pagamento
+              da anuidade, no Multicaixa.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta7">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta7"
+              aria-expanded="true" aria-controls="resposta7">
+              Após pagamento da anuidade, onde devo me dirigir para levantar o meu Cartão Jovem Angola?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta7" class="collapse" aria-labelledby="pergunta7" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">72h após o pagamento da anuidade, podes dirigir-te à <strong class="text-uppercase">Faculdade de Ciências
+                Sociais</strong>, da
+              <strong class="text-uppercase">Universidade Agostinho Neto</strong> (em frente ao INE) e fazer o levantamento do teu CJA</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta8">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta8"
+              aria-expanded="true" aria-controls="resposta8">
+              Qual a validade do Cartão Jovem Angola?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta8" class="collapse" aria-labelledby="pergunta8" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">O Cartão Jovem Angola é válido por <strong class="text-uppercase">1 ano</strong>, após adesão, ou seja, após 1
+              (um) ano de
+              adesão terás que renovar o pagamento da anuidade para continuares a usufruir dos descontos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="pergunta9">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#resposta9"
+              aria-expanded="true" aria-controls="resposta9">
+              Quais os parceiros e qual a percentagem de desconto que tenho ao utilizar o meu Cartão Jovem Angola?
+            </button>
+          </h2>
+        </div>
+
+        <div id="resposta9" class="collapse" aria-labelledby="pergunta9" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text"><a [routerLink]="['/parceiros']"><strong class="text-uppercase">Click aqui</strong></a> e consulta a lista de
+              todos os
+              <strong class="text-uppercase">parceiros</strong> e quais os <strong class="text-uppercase">descontos</strong> oferecidos por cada um. Sempre que fores às compras num destes parceiros
+              leva o teu Cartão Jovem Angola para poderes usufruir dos descontos.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 </section>
 <app-footer></app-footer>
